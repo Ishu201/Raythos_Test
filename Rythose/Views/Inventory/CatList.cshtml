@@ -1,0 +1,142 @@
+﻿@{
+    ViewData["Title"] = "Category List";
+    Layout = "../Shared/admin_layout.cshtml";
+}
+@using Raythose.Models
+
+<script>
+    $(document).ready(function () {
+        $("#inventoryManagement").addClass("active");
+        $("#cat_list").addClass("active");
+        $("#ainventoryManagement_block").css("display", "block");
+    });
+
+</script>
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <p>Category List</p>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <p style='font-size:16px;font-weight:bold'>Category List</p>
+                    </div>
+
+                    <div class="x_content">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box table-responsive">
+                                    <p class="text-muted font-13 m-b-30">
+                                        List of Main Categories and Sub Categories for Raythos Inventory Management.
+                                    </p>
+                                            <br>
+                                            <select id="catType" class="form-control" required style="width:250px">
+                                                <option value="">- Select Category Type -</option>
+                                                <option value="Main">Main Category</option>
+                                                <option value="Sub">Sub Category</option>
+                                            </select>
+                                            <br><br>
+
+                                    <table id="mainCats" class="table table-striped" style="width:100%;display:none;">
+                                        <thead style="background-color: #006666;color:white">
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Main Category</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+
+
+                                        <tbody>
+                                            @foreach (var cat in ViewBag.MainCategories)
+                                            {
+                                                <tr>
+                                                    <td>@cat.MainId</td>
+                                                    <td>@cat.MainCategoryName</td>
+                                                    <td>
+                                                        <a asp-controller="" asp-action="" asp-route-id="@cat.MainId"><i class="fa fa-pencil"></i></a> &nbsp;
+                                                        <a asp-controller="" asp-action="" asp-route-id="@cat.MainId"><i class="fa fa-times"></i></a>
+                                                    </td>
+                                                </tr>
+                                            }
+
+                                        </tbody>
+                                    </table>
+
+
+                                    <table id="SubCats" class="table table-striped" style="width:100%;display:none;">
+                                        <thead style="background-color: #006666;color:white">
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Main Category</th>
+                                                <th>Sub Category</th>
+                                                <th>Price</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+
+
+                                        <tbody style="border-bottom:1px solid #f2f2f2">
+                                            @foreach (var cat in ViewBag.SubCategories)
+                                            {
+                                                var mainCategory = ((IEnumerable<MainCategory>)ViewBag.MainCategories)
+                                                .FirstOrDefault(mc => mc.MainId == cat.MainId);
+
+                                                <tr>
+                                                    <td>@cat.SubId</td>
+                                                    <td>@mainCategory?.MainCategoryName</td>
+                                                    <td>@cat.SubCategoryName</td>
+                                                    <td>$@cat.Price.ToString("N2")</td>
+                                                    <td>
+                                                        <a asp-controller="" asp-action="" asp-route-id="@cat.SubId<"><i class="fa fa-pencil"></i></a> &nbsp;
+                                                        <a asp-controller="" asp-action="" asp-route-id="@cat.SubId<"><i class="fa fa-times"></i></a>
+                                                    </td>
+                                                </tr>
+                                            }
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+</div>
+<!-- /page content -->
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#catType").change(function () {
+            // Get the selected value
+            var selectedValue = $(this).val();
+
+            $("#mainCats, #SubCats").hide();
+
+            if (selectedValue === "Main") {
+                $("#mainCats").show();
+            } else if (selectedValue === "Sub") {
+                $("#SubCats").show();
+            } else {
+                $("#SubCats").hide();
+                $("#mainCats").hide();
+            }
+        });
+    });
+</script>
+

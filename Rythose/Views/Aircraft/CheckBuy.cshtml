@@ -1,0 +1,151 @@
+﻿@{
+    ViewData["Title"] = "Aircraft Gallery";
+    Layout = "../Shared/web_layout.cshtml";
+}
+
+
+<script>
+    var myLinkElement = document.getElementById("aircraftTab");
+    myLinkElement.classList.toggle("active");
+</script>
+
+<!-- ***** Call to Action Start ***** -->
+<section class="section section-bg" id="call-to-action" style="background-image: url('/web/assets/images/back8.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="cta-content">
+                    <br>
+                    <br>
+                    <h2> <em>Cirrus Vision SF50</em></h2>
+                    <p style="font-size:22px">$3,500,000.00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Call to Action End ***** -->
+<!-- ***** Fleet Starts ***** -->
+<br>
+<br>
+
+<section class="section" id="trainers">
+    <div class="container">
+        <center>
+            <label style="font-size:20px">
+                Craft your ideal Aircraft Configuration with our customization
+                options
+            </label>
+        </center>
+        <br><br>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <img class="d-block w-100" style="height: 350px; object-fit: cover;" src="~/web/assets/images/4.jpg"
+                     alt="Second slide">
+            </div>
+
+            <div class="col-lg-6">
+                <div class="row contact-form">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Seating Options:</label>
+                            <select>
+                                <option value="">- Please Select -</option>
+                                <option value="Club Seating">Club Seating</option>
+                                <option value="Individual Seats">Individual Seats</option>
+                                <option value="Divans">Divans</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Interior Design:</label>
+                            <select>
+                                <option value="">- Please Select -</option>
+                                <option value="Luxury Materials">Luxury Materials</option>
+                                <option value="Semi Luxury Materials">Semi Luxury Materials</option>
+                                <option value="Custom Furnishings">Custom Furnishings</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12  contact-form">
+                        <div class="form-group">
+                            <label>Connectivity Options:</label>
+                            <select>
+                                <option value="">- Please Select -</option>
+                                <option value="In-Flight Wi-Fi">In-Flight Wi-Fi</option>
+                                <option value="Satellite Communication Systems:">Satellite Communication Systems</option>
+                                <option value="Cabin Management Systems (CMS)">Cabin Management Systems (CMS)</option>
+                                <option value="Ethernet Ports and Power Outlets">Ethernet Ports and Power Outlets</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div>
+                            <label>Entertainment Options:</label>
+                            <div>
+                                <input type="checkbox" name="entertainmentOption" value="Multiple Display Screens">
+                                <label style="font-size:12px" for="displayScreens">Multiple Display Screens</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="inFlightMovies" name="entertainmentOption"
+                                       value="In-Flight Movies and TV Shows">
+                                <label style="font-size:12px" for="inFlightMovies">In-Flight Movies and TV Shows</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="gamingConsoles" name="entertainmentOption" value="Gaming Consoles">
+                                <label style="font-size:12px" for="gamingConsoles">Gaming Consoles</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="liveTV" name="entertainmentOption" value="Live TV">
+                                <label style="font-size:12px" for="liveTV">Live TV</label>
+                            </div>
+                            <div>
+                                <input type="checkbox" id="customizedPackages" name="entertainmentOption"
+                                       value="Customized Entertainment Packages">
+                                <label style="font-size:12px" for="customizedPackages">Customized Entertainment Packages</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <br>
+                <p>
+                    The Citation Mustang is a very light jet with spirit of a heavier jet. The speed and range of the
+                    performance inspired
+                    Mustang will tackle the sky while delivering the efficiency of a lighter aircraft. It’s aerodynamic design
+                    and advanced
+                    technology excels in short-field performance situations. The cozy interior boasts amazing finishes and the
+                    highest-quality materials for the upper class luxury you come to expect in a business jet. The Mustang’s
+                    cabin has six
+                    large oval windows which provide incredible views and abundant natural light. Looking to rent a private jet
+                    like the
+                    Citation Mustang? Visit our Charter page for a free quote.
+                </p>
+                <br><br>
+                <div class="main-button" style="float:right">
+                    <a asp-action="SingleDetail" asp-controller="Aircraft" style="border:1px solid #0073e6;color:#0073e6;background-color: aliceblue;"
+                       class="btnblue back">Back</a> &nbsp;
+                    <a asp-action="Checkout" asp-controller="Aircraft" style="border:1px solid #0073e6;" class=" btnblue">Checkout</a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+<!-- ***** Fleet Ends ***** -->

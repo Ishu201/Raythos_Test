@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Docs\\Top UP SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\Raythose.csproj": {}
+    "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\Raythose.csproj": {}
   },
   "projects": {
-    "E:\\Docs\\Top UP SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\Raythose.csproj": {
+    "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\Raythose.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Docs\\Top UP SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\Raythose.csproj",
+        "projectUniqueName": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\Raythose.csproj",
         "projectName": "Raythose",
-        "projectPath": "E:\\Docs\\Top UP SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\Raythose.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "E:\\Docs\\Top UP SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\obj\\",
+        "projectPath": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\Raythose.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -25,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,6 +39,26 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

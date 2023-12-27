@@ -1,0 +1,124 @@
+﻿@{
+    ViewData["Title"] = "Order List";
+    Layout = "../Shared/admin_layout.cshtml";
+}
+
+
+<script>
+    $(document).ready(function () {
+        $("#orderManagement").addClass("active");
+        $("#manufacture_list").addClass("active");
+        $("#orderManagement_block").css("display", "block");
+    });
+
+</script>
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <p>Order List</p>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <p style='font-size:16px;font-weight:bold'>Aircrafts Under Manufacture</p>
+                    </div>
+
+                    <div class="x_content">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card-box table-responsive">
+                                    <p class="text-muted font-13 m-b-30">
+                                        List of Aircrafts that are being manufactured.
+                                    </p>
+                                    <table id="datatable" class="table table-striped" style="width:100%">
+                                        <thead style="background-color: #006666;color:white">
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Aircraft</th>
+                                                <th>Customer</th>
+                                                <th>Date</th>
+                                                <th>Seating <br> Option</th>
+                                                <th>Interior <br> Design</th>
+                                                <th>Connectivity <br> Option</th>
+                                                <th>Entertaintment <br> Option</th>
+                                                <th>Process</th>
+                                            </tr>
+                                        </thead>
+
+
+                                        <tbody>
+                                            <tr>
+                                                <td>001</td>
+                                                <td>Cirrus Vision SF50</td>
+                                                <td>Jhon Doe</td>
+                                                <td>12/05/2023</td>
+                                                <td>Aeron Seats</td>
+                                                <td>Celine Books <br> Wine Store</td>
+                                                <td>
+                                                    Wifi Adapter<br>Connection Wires <br>Portable Setup
+                                                </td>
+                                                <td>Apple TV<br>Tv Stand Rack<br> Speakers</td>
+                                                <td>
+                                                    <a asp-controller="OrderProcess" asp-action="start_shipment"
+                                                       class="btn btn-sm btn-warning"
+                                                       style="color:black">Complete</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>001</td>
+                                                <td>Cirrus Vision SF50</td>
+                                                <td>Jhon Doe</td>
+                                                <td>12/05/2023</td>
+                                                <td>Aeron Seats</td>
+                                                <td>Celine Books <br> Wine Store</td>
+                                                <td>
+                                                    Wifi Adapter<br>Connection Wires <br>Portable Setup
+                                                </td>
+                                                <td>Tv Stand Rack<br> Speakers</td>
+                                                <td>
+                                                    <a asp-controller="OrderProcess" asp-action="start_shipment"
+                                                       class="btn btn-sm btn-warning"
+                                                       style="color:black">Complete</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>001</td>
+                                                <td>Cirrus Vision SF50</td>
+                                                <td>Jhon Doe</td>
+                                                <td>12/05/2023</td>
+                                                <td>Aeron Seats</td>
+                                                <td>Celine Books <br> Wine Store <br> Wine Store</td>
+                                                <td>
+                                                    Wifi Adapter<br>Connection Wires <br>Portable Setup
+                                                </td>
+                                                <td>Samsung TV<br>Connection Adapter</td>
+                                                <td>
+                                                    <a asp-controller="OrderProcess" asp-action="start_shipment"
+                                                       class="btn btn-sm btn-warning"
+                                                       style="color:black">Complete</a>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+</div>
+<!-- /page content -->

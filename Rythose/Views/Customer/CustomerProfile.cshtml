@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Aircraft Gallery";
+    Layout = "../Shared/web_layout.cshtml";
+}
+
+
+<script>
+    var myLinkElement = document.getElementById("myAccount");
+    myLinkElement.classList.toggle("active");
+</script>
+
+<!-- ***** Call to Action Start ***** -->
+<section class="section section-bg" id="call-to-action" style="background-image: url('/web/assets/images/back13.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="cta-content">
+                    <br>
+                    <br>
+                    <h2>Customer <em> Profile</em></h2>
+                    <p>Personalize Your User Profile</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="trainers">
+    <div class="container">
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-3 col-sm-6" style="border-right:#808080">
+                <img src="~/web/assets/images/t1.jpg" style="width:90%" alt="fourth muscle">
+            </div>
+            <div class="col-md-4 col-sm-6 contact-form" style="border-right:#808080">
+                Personal Information
+                <br><br>
+                <div class="form-group">
+                    <p>Full Name:</p>
+                    <input type="text">
+                    <br>
+                    <p>ID Number:</p>
+                    <input type="text">
+                    <br>
+                    <p>Date of Birth:</p>
+                    <input type="text">
+                    <br>
+                    <p>License Card:</p>
+                    <input type="text">
+                </div>
+            </div>
+
+            <div class="col-lg-1">
+            </div>
+            <div class="col-md-4 col-sm-6 contact-form">
+                Contact Details
+                <br><br>
+                <div class="form-group">
+                    <p>Contact:</p>
+                    <input type="text">
+                    <br>
+                    <p>Email:</p>
+                    <input type="text">
+                    <br>
+                    <p>Address:</p>
+                    <input type="text"> <br>
+                    <input type="text">
+                    <br>
+                    <p>Country / City :</p>
+                    <input type="text" value="Colombo">
+                    <input type="text" value="Sri Lanka">
+                    <br>
+                    <p>Zip Code:</p>
+                    <input type="text">
+                </div>
+
+                <br>
+                <div class="main-button" style="float:right">
+                    <a href="#" style="border:1px solid #0073e6;" " class=" btnblue">Update</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ***** Fleet Ends ***** -->

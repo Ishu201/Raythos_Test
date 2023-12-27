@@ -1,0 +1,99 @@
+﻿@{
+    ViewData["Title"] = "Order List";
+    Layout = "../Shared/admin_layout.cshtml";
+}
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#orderManagement").addClass("active");
+        $("#shipping_list").addClass("active");
+        $("#orderManagement_block").css("display", "block");
+    });
+
+</script>
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <p>Order Processing</p>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <p style='font-size:16px;font-weight:bold'>
+                            Aircraft Shipment Details
+                        </p>
+                    </div>
+
+                    <div class="x_content">
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <img src="~/admin/build/images/4.jpg" alt="" style="width:80%">
+                                    <p style="font-size:24px;color:#006699;margin-top:10px">
+                                        Cirrus Vision
+                                        SF50
+                                    </p>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="col-form-label " style="font-size: 18px;">
+                                        Customer Details
+                                    </label>
+                                    <p style="line-height: 25px;">
+                                        <b>Customer Name -</b> Mr.John Doe<br>
+                                        <b>Address -</b> 50/2, kithulakanda<br>
+                                        <b>Country -</b> Toronto, Gampaha<br>
+                                        <b>Zip Code -</b> M11725<br>
+                                        <b>Contact -</b> 0714569745
+                                    </p>
+                                    <br>
+                                    <label class="col-form-label " style="font-size: 18px;">
+                                        Shipment Details
+                                    </label>
+                                    <p style="line-height: 25px;">
+                                        <b>Order ID -</b> RAA0001<br>
+                                        <b>Aircraft -</b> Cirrus Vision SF50<br>
+                                        <b>Total; Amount -</b> $25,500,000.00<br>
+                                        <b>Payment Status -</b> Paid
+                                    </p>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label class="col-form-label ">
+                                        Shipped Date <span class="required">*</span>
+                                    </label>
+                                    <input class="date-picker form-control" style="width:80%"
+                                           placeholder="dd-mm-yyyy" type="date">
+                                    <br>
+                                    <label class="col-form-label ">
+                                        Expected Delivery Date <span class="required">*</span>
+                                    </label>
+                                    <input class="date-picker form-control" style="width:80%"
+                                           placeholder="dd-mm-yyyy" type="date">
+
+                                    <br>
+
+
+                                    <input type="submit" class="btn btn-small btn-success"
+                                           style="position:absolute;bottom:0%;right:0%"
+                                           value="Ship Aircraft">
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+</div>
+<!-- /page content -->

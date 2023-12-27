@@ -1,0 +1,137 @@
+﻿@{
+    ViewData["Title"] = "Order List";
+    Layout = "../Shared/admin_layout.cshtml";
+}
+
+
+<script>
+    $(document).ready(function () {
+        $("#inventoryManagement").addClass("active");
+        $("#item_reg").addClass("active");
+        $("#ainventoryManagement_block").css("display", "block");
+    });
+
+</script>
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <p>Inventory Register</p>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <p style='font-size:16px;font-weight:bold'>New Inventory Items Registration</p>
+                    </div>
+
+                    <div class="x_content">
+                        <br />
+                        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+
+                            <div class="row">
+                                <div class="col-lg-5">
+                                    <label class="label-align" for="model-name">
+                                        Item Name <span class="required">*</span>
+                                    </label>
+                                    <input type="text" id="model-name" required="required"
+                                           class="form-control ">
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <label class="label-align" for="model-name">
+                                        Item Batch <span class="required">*</span>
+                                    </label>
+                                    <input type="text" id="model-name" required="required"
+                                           class="form-control ">
+                                </div>
+
+                                <div class="col-lg-3"></div>
+                                <div class="col-lg-3">
+                                    <br><br>
+                                    <label class="label-align" for="model-name">
+                                        Main Category <span class="required">*</span>
+                                    </label>
+                                    <select id="heard" class="form-control" required>
+                                        <option value="">Main 1</option>
+                                        <option value="">Main 2</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <br><br>
+                                    <label class="label-align" for="model-name">
+                                        Sub Category <span class="required">*</span>
+                                    </label>
+                                    <select id="heard" class="form-control" required>
+                                        <option value="">Sub 1</option>
+                                        <option value="">Sub 2</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-lg-2">
+                                    <br><br>
+                                    <label class="label-align" for="model-name">
+                                        Qty <span class="required">*</span>
+                                    </label>
+                                    <input type="text" id="model-name" required="required"
+                                           class="form-control ">
+                                </div>
+
+                                <div class="col-lg-2">
+                                    <br><br>
+                                    <label class="label-align" for="model-name">
+                                        Price <span class="required">*</span>
+                                    </label>
+                                    <input type="text" id="model-name" required="required"
+                                           class="form-control ">
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <br><br>
+                                    <label class="label-align" for="model-name">
+                                        Vendor <span class="required">*</span>
+                                    </label>
+                                    <input type="text" id="model-name" required="required"
+                                           class="form-control ">
+                                </div>
+
+                                <div class="col-lg-3">
+                                    <br><br>
+                                    <label class="label-align" for="model-name">
+                                        Date <span class="required">*</span>
+                                    </label>
+                                    <input type="date" id="model-name" required="required"
+                                           class="form-control ">
+                                </div>
+
+                                <div class="col-md-12 col-sm-12 offset-md-12" style="text-align:right">
+                                    <br><br>
+                                    <button class="btn btn-primary" type="reset">Reset</button>
+                                    <button type="submit" class="btn btn-success">Submit</button>
+                                    <br><br>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+<br>
+<br>
+<br>
+    </div>
+<!-- /page content -->

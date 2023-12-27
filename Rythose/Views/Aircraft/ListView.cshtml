@@ -1,0 +1,273 @@
+﻿@{
+    ViewData["Title"] = "Aircraft Gallery";
+    Layout = "../Shared/web_layout.cshtml";
+}
+
+
+<script>
+    var myLinkElement = document.getElementById("aircraftTab");
+    myLinkElement.classList.toggle("active");
+</script>
+
+<!-- ***** Call to Action Start ***** -->
+<section class="section section-bg" id="call-to-action" style="background-image: url('/web/assets/images/back3.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1">
+                <div class="cta-content">
+                    <br>
+                    <br>
+                    <h2>Our <em>Aircrafts</em></h2>
+                    <p>Discover elevated horizons with our elite aircraft catalog</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ***** Call to Action End ***** -->
+<!-- ***** Fleet Starts ***** -->
+<section class="section" id="trainers">
+    <div class="container">
+        <br>
+        <br>
+        <div class="contact-form">
+            <form action="#" id="contact">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Aircraft Type:</label>
+
+                            <select>
+                                <option value="">All</option>
+                                <option value="Light Private Jet">Light Private Jets</option>
+                                <option value="Mid-Size Private Jets">Mid-Size Private Jets</option>
+                                <option value="Super Mid-Size Private Jets">Super Mid-Size Private Jets</option>
+                                <option value="Heavy Private Jets">Heavy Private Jets</option>
+                                <option value="Turboprop Private Jets">Turboprop Private Jets</option>
+                                <option value="VLJ Private Jets">VLJ Private Jets</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Passanger Capacity:</label>
+
+                            <select>
+                                <option value="">--All --</option>
+                                <option value="1">1 to 5</option>
+                                <option value="2">5 to 10</option>
+                                <option value="3">10 to 15</option>
+                                <option value="4">15 to 20</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Range:</label>
+
+                            <select>
+                                <option value="">-- All --</option>
+                                <option value="1">Below 5 hours</option>
+                                <option value="2">5 to 10 Hours</option>
+                                <option value="3">More than 10 Hours</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label>Speed:</label>
+
+                            <select>
+                                <option value="">-- All --</option>
+                                <option value="1">Below 300 Knots</option>
+                                <option value="2">300 to 400 Knots</option>
+                                <option value="3">400 to 500 Knots</option>
+                                <option value="4">More than 500 Knots</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-4 offset-sm-4">
+                    <div class="main-button text-center">
+                        <a href="#">Search</a>
+                    </div>
+                </div>
+                <br>
+                <br>
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="trainer-item" style="height:440px">
+                    <div class="image-thumb">
+                        <img src="~/web/assets/images/1.jpg" alt="" style="height:238px">
+                    </div>
+                    <div class="down-content">
+                        <span style="font-size:18px">
+                            $3,500,000.00
+                        </span>
+
+                        <h4>Cirrus Vision SF50</h4>
+
+                        <p>
+                            <i class="fa fa-dashboard"></i> 446 knots &nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-cube"></i> 2,700 nautical miles &nbsp;&nbsp;&nbsp;
+                        </p>
+
+                        <ul class="social-icons" style="float:right;font-size:13px;">
+                            <li><a asp-action="SingleDetail" asp-controller="Aircraft">+ More Details</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="trainer-item" style="height:440px">
+                    <div class="image-thumb">
+                        <img src="~/web/assets/images/4.jpg" alt="" style="height:238px">
+                    </div>
+                    <div class="down-content">
+                        <span style="font-size:18px">
+                            $1,170,000.00
+                        </span>
+
+                        <h4>Cessna Citation Latitude</h4>
+
+                        <p>
+                            <i class="fa fa-dashboard"></i> 446 knots &nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-cube"></i> 2,700 nautical miles &nbsp;&nbsp;&nbsp;
+                        </p>
+
+                        <ul class="social-icons" style="float:right;font-size:13px;">
+                            <li><a asp-action="SingleDetail" asp-controller="Aircraft">+ More Details</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="trainer-item" style="height:440px">
+                    <div class="image-thumb">
+                        <img src="~/web/assets/images/7.png" alt="" style="height:238px">
+                    </div>
+                    <div class="down-content">
+                        <span style="font-size:18px">
+                            $2,200,000.00
+                        </span>
+
+                        <h4>Bombardier Global 7500</h4>
+
+                        <p>
+                            <i class="fa fa-dashboard"></i> 446 knots &nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-cube"></i> 2,700 nautical miles &nbsp;&nbsp;&nbsp;
+                        </p>
+
+                        <ul class="social-icons" style="float:right;font-size:13px;">
+                            <li><a asp-action="SingleDetail" asp-controller="Aircraft">+ More Details</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="trainer-item" style="height:440px">
+                    <div class="image-thumb">
+                        <img src="~/web/assets/images/1.jpg" alt="" style="height:238px">
+                    </div>
+                    <div class="down-content">
+                        <span style="font-size:18px">
+                            $3,500,000.00
+                        </span>
+
+                        <h4>Cirrus Vision SF50</h4>
+
+                        <p>
+                            <i class="fa fa-dashboard"></i> 446 knots &nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-cube"></i> 2,700 nautical miles &nbsp;&nbsp;&nbsp;
+                        </p>
+
+                        <ul class="social-icons" style="float:right;font-size:13px;">
+                            <li><a asp-action="SingleDetail" asp-controller="Aircraft">+ More Details</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="trainer-item" style="height:440px">
+                    <div class="image-thumb">
+                        <img src="~/web/assets/images/4.jpg" alt="" style="height:238px">
+                    </div>
+                    <div class="down-content">
+                        <span style="font-size:18px">
+                            $1,170,000.00
+                        </span>
+
+                        <h4>Cessna Citation Latitude</h4>
+
+                        <p>
+                            <i class="fa fa-dashboard"></i> 446 knots &nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-cube"></i> 2,700 nautical miles &nbsp;&nbsp;&nbsp;
+                        </p>
+
+                        <ul class="social-icons" style="float:right;font-size:13px;">
+                            <li><a asp-action="SingleDetail" asp-controller="Aircraft">+ More Details</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="trainer-item" style="height:440px">
+                    <div class="image-thumb">
+                        <img src="~/web/assets/images/7.png" alt="" style="height:238px">
+                    </div>
+                    <div class="down-content">
+                        <span style="font-size:18px">
+                            $2,200,000.00
+                        </span>
+
+                        <h4>Bombardier Global 7500</h4>
+
+                        <p>
+                            <i class="fa fa-dashboard"></i> 446 knots &nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-cube"></i> 2,700 nautical miles &nbsp;&nbsp;&nbsp;
+                        </p>
+
+                        <ul class="social-icons" style="float:right;font-size:13px;">
+                            <li><a asp-action="SingleDetail" asp-controller="Aircraft">+ More Details</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <br>
+
+        <nav>
+            <ul class="pagination pagination-lg justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</section>
+<!-- ***** Fleet Ends ***** -->

@@ -1,0 +1,161 @@
+﻿@using Raythose.Models
+
+@{
+    ViewData["Title"] = "Order List";
+    Layout = "../Shared/admin_layout.cshtml";
+}
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#orderManagement").addClass("active");
+        $("#order_list").addClass("active");
+        $("#orderManagement_block").css("display", "block");
+    });
+
+</script>
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+        <div class="page-title">
+            <div class="title_left">
+                <p>Order Processing</p>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <p style='font-size:16px;font-weight:bold'>
+                            Aircraft Manufacture Resource Allocate
+                        </p>
+                    </div>
+
+                    <div class="x_content">
+                        <form>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    
+                                </div>
+                                <div class="col-sm-4">
+                                    <label class="col-form-label "
+                                           style="color:#00b3b3;font-weight:bold">
+                                        Manufacture Start Date
+                                        <span class="required">*</span>
+                                    </label>
+                                    <input class="date-picker form-control" placeholder="dd-mm-yyyy"
+                                           type="date">
+                                    <br>
+                                    <label class="col-form-label "
+                                           style="color:#00b3b3;font-weight:bold">
+                                        Luxury Materials <span class="required">*</span>
+                                    </label>
+                                    <div class="row">
+                                        
+                                    </div>
+                                    <br>
+                                    <label class="col-form-label "
+                                           style="color:#00b3b3;font-weight:bold">
+                                        Entertaintment Options
+                                        <span class="required">*</span>
+                                    </label>
+                                    <div class="row">
+                                         
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <label class="col-form-label "
+                                           style="color:#00b3b3;font-weight:bold">
+                                        Club Seating Items<span class="required">*</span>
+                                    </label>
+                                    <select class="select2_single form-control" tabindex="-1">
+                                       
+                                    </select>
+
+                                    <br>
+                                    <label class="col-form-label "
+                                           style="color:#00b3b3;font-weight:bold">
+                                        Connectivity Options <span class="required">*</span>
+                                    </label>
+                                    <div class="row">
+                                            
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <hr>
+                                    <center>
+                                        <label class="col-form-label" style="font-size:medium;">
+                                            Main Essential Parts <br>
+                                        </label>
+                                    </center>
+                                </div>
+                                <div class="col-sm-3">
+                                    <label class="col-form-label"
+                                           style="color:#00b3b3;font-weight:bold">
+                                        Select Airframe
+                                        <span class="required">*</span>
+                                    </label>
+                                    <br>
+                                    
+
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <label class="col-form-label"
+                                           style="color:#00b3b3;font-weight:bold">
+                                        Select Powerplant
+                                        <span class="required">*</span>
+                                    </label>
+                                    <br>
+                                    
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <label class="col-form-label"
+                                           style="color:#00b3b3;font-weight:bold">
+                                        Select Avionics
+                                        <span class="required">*</span>
+                                    </label>
+                                    <br>
+                                   
+                                </div>
+
+                                <div class="col-sm-3">
+                                    <label class="col-form-label"
+                                           style="color:#00b3b3;font-weight:bold">
+                                        Miscellaneous Components
+                                        <span class="required">*</span>
+                                    </label>
+                                    <br>
+                                    
+                                </div>
+
+                                <div class="col-lg-12">
+                                    <input type="submit" class="btn btn-small btn-success"
+                                           style="float:right"
+                                           value="Start Manufaturing">
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br>
+</div>
+<!-- /page content -->
