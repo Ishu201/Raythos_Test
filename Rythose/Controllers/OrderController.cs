@@ -1,11 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Raythose.DB;
 using Raythose.Models;
 using Rythose.Models;
-using System;
-using System.ComponentModel.DataAnnotations;
-using System.Data.SqlClient;
 using System.Diagnostics;
 
 namespace Rythose.Controllers
@@ -21,73 +19,147 @@ namespace Rythose.Controllers
 
         public IActionResult order_list()
         {
-            IEnumerable<Order> objOrderList = ctx.tbl_order.ToList();
-            return View(objOrderList);
+            List<Order> orders = ctx.tbl_order
+            .Include(item => item.Aircraft)
+            .Include(item => item.Customer)
+            .Include(item => item.SeatingOption)
+            .Include(item => item.InteriorDesign)
+            .Include(item => item.ConnectivityOption)
+            .Include(item => item.EntertainmentOption)
+            .Where(item => item.OrderStatus == "no progress" && item.PaymentStatus == "Paid")
+            .ToList();
+
+            return View(orders);
         }
 
         public IActionResult start_manufacture(int id)
         {
-            // Execute SQL query for Essentials
-            /*EssentialItems airframe = new EssentialItems();
-            List<(int essential_id, string ess_name)> airframe_data = airframe.GetItemsByEssentialType(ctx, "Airframe");
+            Order orderItem = ctx.tbl_order
+        .Include(item => item.Aircraft)
+        .Include(item => item.Customer)
+        .Include(item => item.SeatingOption)
+        .Include(item => item.InteriorDesign)
+        .Include(item => item.ConnectivityOption)
+        .Include(item => item.EntertainmentOption)
+        .FirstOrDefault(item => item.OrderId == id);
 
-            EssentialItems powerplant = new EssentialItems();
-            List<(int essential_id, string ess_name)> powerplant_data = powerplant.GetItemsByEssentialType(ctx, "Powerplant");
+            if (orderItem == null)
+            {
+                return NotFound();
+            }
 
-            EssentialItems avionics = new EssentialItems();
-            List<(int essential_id, string ess_name)> avionics_data = avionics.GetItemsByEssentialType(ctx, "Avionics");
+            // Fetch the lists of items from tbl_items for different categories
+            List<Item> seatingItemList = ctx.tbl_items.Where(item => item.SubId == orderItem.Seating).ToList();
+            List<Item> entertainmentItemList = ctx.tbl_items.Where(item => item.SubId == orderItem.Entertainment).ToList();
+            List<Item> interiorItemList = ctx.tbl_items.Where(item => item.SubId == orderItem.Interior).ToList();
+            List<Item> ConnectivityItemList = ctx.tbl_items.Where(item => item.SubId == orderItem.Connectivity).ToList();
 
-            EssentialItems misc = new EssentialItems();
-            List<(int essential_id, string ess_name)> misc_data = misc.GetItemsByEssentialType(ctx, "Miscellaneous");
+            // Fetch the lists of essential items for different types
+            List<EssentialItems> airframeItemList = ctx.tbl_essential_items
+                .Where(item => item.EssentialType == "Airframe" && item.EssentialStock > 0)
+                .ToList();
+            List<EssentialItems> powerplantItemList = ctx.tbl_essential_items
+                .Where(item => item.EssentialType == "Powerplant" && item.EssentialStock > 0)
+                .ToList();
+            List<EssentialItems> avionicsItemList = ctx.tbl_essential_items
+                .Where(item => item.EssentialType == "Avionics" && item.EssentialStock > 0)
+                .ToList();
+            List<EssentialItems> miscellaneousItemList = ctx.tbl_essential_items
+                .Where(item => item.EssentialType == "Miscellaneous" && item.EssentialStock > 0)
+                .ToList();
 
-            ViewData["airframe"] = airframe_data;
-            ViewData["powerplant"] = powerplant_data;
-            ViewData["avionics"] = avionics_data;
-            ViewData["misc"] = misc_data;
 
-            
-                // Execute SQL query for Other Items
-                Item seating_ob = new Item();
-                List<(int item_id, string item_name)> seating_ob_data = seating_ob.GetSelectedItems(ctx, 1);
-                ViewData["seating_data"] = seating_ob_data;
+            // Create an instance of the view model and set its properties
+            OrderViewModel viewModel = new OrderViewModel
+            {
+                Order = orderItem,
+                Aircraft = orderItem.Aircraft,
+                SeatingOption = orderItem.SeatingOption,
+                InteriorDesign = orderItem.InteriorDesign,
+                ConnectivityOption = orderItem.ConnectivityOption,
+                EntertainmentOption = orderItem.EntertainmentOption,
+                SeatingItemList = new SelectList(seatingItemList, "ItemId", "ItemName"),
+                EntertainmentItemList = new SelectList(entertainmentItemList, "ItemId", "ItemName"),
+                InteriorItemList = new SelectList(interiorItemList, "ItemId", "ItemName"),
+                ConnectivityItemList = new SelectList(ConnectivityItemList, "ItemId", "ItemName"),
+                AirframeItemList = new SelectList(airframeItemList, "EssentialId", "EssentialName"),
+                PowerplantItemList = new SelectList(powerplantItemList, "EssentialId", "EssentialName"),
+                AvionicsItemList = new SelectList(avionicsItemList, "EssentialId", "EssentialName"),
+                MiscellaneousItemList = new SelectList(miscellaneousItemList, "EssentialId", "EssentialName")
+            };
 
-                Item interior_ob = new Item();
-                List<(int item_id, string item_name)> interior_ob_data = seating_ob.GetSelectedItems(ctx, 2);
-                ViewData["interior_data"] = interior_ob_data;
 
-                Item connectivity_ob = new Item();
-                List<(int item_id, string item_name)> connectivity_ob_data = connectivity_ob.GetSelectedItems(ctx, 3);
-                ViewData["connectivity_data"] = connectivity_ob_data;
-
-                Item entertaintment_ob = new Item();
-                List<(int item_id, string item_name)> entertaintment_ob_data = entertaintment_ob.GetSelectedItems(ctx, 4);
-                ViewData["entertaintment_data"] = entertaintment_ob_data;
-            */
-            
-            return View();
+            // Pass the view model to the view
+            return View(viewModel);
         }
 
 
 
         public IActionResult manufacture_list()
         {
-            return View();
+            List<Order> orders = ctx.tbl_order
+            .Include(item => item.Aircraft)
+            .Include(item => item.Customer)
+            .Include(item => item.Manufacture)
+            .Where(item => item.OrderStatus == "Manufacturing")
+            .ToList();
+
+            return View(orders);
         }
 
-        public IActionResult start_shipment()
+        public IActionResult start_shipment(int id)
         {
-            return View();
+            Order orderItem = ctx.tbl_order
+                .Include(item => item.Aircraft)
+                .Include(item => item.Customer)
+                .FirstOrDefault(item => item.OrderId == id);
+
+            return View(orderItem);
         }
 
         public IActionResult shipping_list()
         {
-            return View();
+            List<Order> orders = ctx.tbl_order
+            .Include(item => item.Aircraft)
+            .Include(item => item.Customer)
+            .Where(item => item.OrderStatus == "Dispatched" || item.OrderStatus == "Shipped" || item.OrderStatus == "Local Country")
+            .ToList();
+
+            return View(orders);
         }
 
         public IActionResult completed_list()
         {
-            return View();
+            List<Order> orders = ctx.tbl_order
+            .Include(item => item.Aircraft)
+            .Include(item => item.Customer)
+            .Include(item => item.SeatingOption)
+            .Include(item => item.InteriorDesign)
+            .Include(item => item.ConnectivityOption)
+            .Include(item => item.EntertainmentOption)
+            .Where(item => item.OrderStatus == "Completed")
+            .ToList();
+
+            return View(orders);
         }
+
+        public IActionResult Invoice(int id)
+        {
+            Order order = ctx.tbl_order
+                .Include(item => item.Aircraft)
+                .Include(item => item.Customer)
+                .Include(item => item.Manufacture)
+                .FirstOrDefault(item => item.OrderId == id);
+
+            if (order == null)
+            {
+                // Handle the case where no order with the specified id is found
+                return NotFound();
+            }
+
+            return View(order);
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

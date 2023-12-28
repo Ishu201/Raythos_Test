@@ -423,6 +423,18 @@ namespace Raythose.Migrations
 
                     b.HasKey("OrderId");
 
+                    b.HasIndex("AircraftId");
+
+                    b.HasIndex("Connectivity");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("Entertainment");
+
+                    b.HasIndex("Interior");
+
+                    b.HasIndex("Seating");
+
                     b.ToTable("tbl_order");
                 });
 
@@ -500,6 +512,57 @@ namespace Raythose.Migrations
                     b.Navigation("MainCategory");
 
                     b.Navigation("SubCategory");
+                });
+
+            modelBuilder.Entity("Raythose.Models.Order", b =>
+                {
+                    b.HasOne("Raythose.Models.Aircraft", "Aircraft")
+                        .WithMany()
+                        .HasForeignKey("AircraftId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Raythose.Models.SubCategory", "ConnectivityOption")
+                        .WithMany()
+                        .HasForeignKey("Connectivity")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Raythose.Models.Customer", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Raythose.Models.SubCategory", "EntertainmentOption")
+                        .WithMany()
+                        .HasForeignKey("Entertainment")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Raythose.Models.SubCategory", "InteriorDesign")
+                        .WithMany()
+                        .HasForeignKey("Interior")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Raythose.Models.SubCategory", "SeatingOption")
+                        .WithMany()
+                        .HasForeignKey("Seating")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Aircraft");
+
+                    b.Navigation("ConnectivityOption");
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("EntertainmentOption");
+
+                    b.Navigation("InteriorDesign");
+
+                    b.Navigation("SeatingOption");
                 });
 #pragma warning restore 612, 618
         }

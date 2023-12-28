@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using Raythose.DB;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Raythose.Models
 {
@@ -61,7 +63,30 @@ namespace Raythose.Models
         [MaxLength(10)]
         public string Status { get; set; } = "active";
 
+        [Required]
+        public string OrderDate { get; set; }
 
+
+        [ForeignKey("AircraftId")]
+        public Aircraft Aircraft { get; set; }
+
+        [ForeignKey("CustomerId")]
+        public Customer Customer { get; set; }
+
+        [ForeignKey("Seating")]
+        public SubCategory SeatingOption { get; set; }
+
+        [ForeignKey("Interior")]
+        public SubCategory InteriorDesign { get; set; }
+
+        [ForeignKey("Connectivity")]
+        public SubCategory ConnectivityOption { get; set; }
+
+        [ForeignKey("Entertainment")]
+        public SubCategory EntertainmentOption { get; set; }
+
+        [ForeignKey("OrderId")]
+        public Manufacture Manufacture { get; set; }
 
     }
 }

@@ -21,5 +21,6 @@ namespace Raythose.Models
         [Required]
         [MaxLength(10)]
         public string Status { get; set; } = "active";
+
     }
 }

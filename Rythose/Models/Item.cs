@@ -46,67 +46,6 @@ namespace Raythose.Models
         public SubCategory SubCategory { get; set; }
 
 
-        /*public List<Item> GetAllItems(ApplicationDbContext context)
-        {
-            try
-            {
-                var items = context.tbl_items
-                    .FromSqlRaw("SELECT * FROM tbl_items")
-                    .ToList();
-
-                return items ?? new List<Item>(); // Handle null if necessary
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred: {ex.Message}");
-                // Handle the exception according to your application's needs
-                return new List<Item>(); // or throw an exception
-            }
-        }
-
-
-
-        public List<(int item_id, string item_name)> GetSelectedItems(ApplicationDbContext context, int mainId)
-        {
-            
-            try
-            {
-                var items = context.tbl_items
-                    .FromSqlRaw("SELECT item_id, item_name FROM tbl_items WHERE main_id = {mainId}")
-                    .Select(result => new ValueTuple<int, string>(result.item_id, result.item_name))
-                    .ToList();
-
-                return items ?? new List<(int item_id, string item_name)>(); // Handle null if necessary
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred: {ex.Message}");
-                // Handle the exception according to your application's needs
-                return new List<(int item_id, string item_name)>(); // or throw an exception
-            }
-        }
-
-
-        public List<(int item_id, string item_name)> GetEntertainmentItemDetails(ApplicationDbContext context)
-        {
-            try
-            {
-                var items = context.tbl_items
-                    .FromSqlRaw("SELECT item_id, item_name FROM tbl_items WHERE main_id = '4'")
-                    .Select(result => new ValueTuple<int, string>(result.item_id, result.item_name))
-                    .ToList();
-
-                return items ?? new List<(int item_id, string item_name)>(); // Handle null if necessary
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"An error occurred: {ex.Message}");
-                // Handle the exception according to your application's needs
-                return new List<(int item_id, string item_name)>(); // or throw an exception
-            }
-        }*/
-
-
 
 
     }

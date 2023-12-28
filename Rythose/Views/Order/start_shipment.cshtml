@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Order List";
+    ViewData["Title"] = "Shipment Start";
     Layout = "../Shared/admin_layout.cshtml";
 }
 
@@ -18,7 +18,7 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <p>Order Processing</p>
+                <p>Order Shipment</p>
             </div>
         </div>
 
@@ -37,10 +37,9 @@
                         <form>
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <img src="~/admin/build/images/4.jpg" alt="" style="width:80%">
+                                    <img src="~/uploads/@Model.Aircraft.FrontImage1" alt="" style="width:80%">
                                     <p style="font-size:24px;color:#006699;margin-top:10px">
-                                        Cirrus Vision
-                                        SF50
+                                        @Model.Aircraft.ModelName
                                     </p>
                                 </div>
                                 <div class="col-sm-4">
@@ -48,21 +47,21 @@
                                         Customer Details
                                     </label>
                                     <p style="line-height: 25px;">
-                                        <b>Customer Name -</b> Mr.John Doe<br>
-                                        <b>Address -</b> 50/2, kithulakanda<br>
-                                        <b>Country -</b> Toronto, Gampaha<br>
-                                        <b>Zip Code -</b> M11725<br>
-                                        <b>Contact -</b> 0714569745
+                                        <b>Customer Name -</b> @Model.Customer.FullName<br>
+                                        <b>Address -</b> @Model.Customer.Address<br>
+                                        <b>Country -</b> @Model.Customer.City, @Model.Customer.Country<br>
+                                        <b>Zip Code -</b> @Model.Customer.ZipCode<br>
+                                        <b>Contact -</b> @Model.Customer.Contact
                                     </p>
                                     <br>
                                     <label class="col-form-label " style="font-size: 18px;">
                                         Shipment Details
                                     </label>
                                     <p style="line-height: 25px;">
-                                        <b>Order ID -</b> RAA0001<br>
-                                        <b>Aircraft -</b> Cirrus Vision SF50<br>
-                                        <b>Total; Amount -</b> $25,500,000.00<br>
-                                        <b>Payment Status -</b> Paid
+                                        <b>Order ID -</b> @GetFormattedOrderId(Model.OrderId)<br>
+                                        <b>Aircraft Price -</b> $@Model.Aircraft.Price.ToString("N2")<br>
+                                        <b>Total Amount -</b> $@Model.FinalAmount.ToString("N2")<br>
+                                        <b>Payment Status -</b> @Model.PaymentStatus
                                     </p>
                                 </div>
 
@@ -97,3 +96,10 @@
     <br><br><br>
 </div>
 <!-- /page content -->
+@functions {
+    // Helper function to format the OrderId as "RAA0001", "RAA0002", etc.
+    public string GetFormattedOrderId(int orderId)
+    {
+        return $"RAA{orderId:D4}";
+    }
+}

@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Order List";
+    ViewData["Title"] = "Completed Order List";
     Layout = "../Shared/admin_layout.cshtml";
 }
 
@@ -56,52 +56,26 @@
 
 
                                         <tbody>
-                                            <tr>
-                                                <td>001</td>
-                                                <td>Cirrus Vision SF50</td>
-                                                <td>Jhon Doe</td>
-                                                <td>Club Seating <br> <b>$25,000.00</b></td>
-                                                <td>Semi Luxury Materials <br> <b>$25,000.00</b></td>
-                                                <td>In-Flight Wi-Fi <br> <b>$25,000.00</b></td>
-                                                <td>
-                                                    Multiple Display Screens<br>Gaming Consoles <br>
-                                                    <b>$25,000.00</b>
-                                                </td>
-                                                <td><b>$35,000,000.00</b></td>
-                                                <td style="text-align:center"><a target='_blank' asp-controller="OrderProcess" asp-action="Invoice"><i class="fa fa-eye"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>001</td>
-                                                <td>Cirrus Vision SF50</td>
-                                                <td>Jhon Doe</td>
-                                                <td>Individual Seats <br> <b>$25,000.00</b></td>
-                                                <td>Luxury Materials <br> <b>$25,000.00</b></td>
-                                                <td>
-                                                    Satellite Communication Systems <br> <b>$25,000.00</b>
-                                                </td>
-                                                <td>
-                                                    Multiple Display Screens<br>Gaming Consoles <br>
-                                                    <b>$25,000.00</b>
-                                                </td>
-                                                <td><b>$35,000,000.00</b></td>
-                                                <td style="text-align:center"><a target='_blank' asp-controller="OrderProcess" asp-action="Invoice"><i class="fa fa-eye"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>001</td>
-                                                <td>Cirrus Vision SF50</td>
-                                                <td>Jhon Doe</td>
-                                                <td>Divans <br> <b>$25,000.00</b> </td>
-                                                <td>Custom Furnishings <br> <b>$25,000.00</b></td>
-                                                <td>
-                                                    Ethernet Ports and Power Outlets <br> <b>$25,000.00</b>
-                                                </td>
-                                                <td>
-                                                    Multiple Display Screens<br>Gaming Consoles
-                                                    <br><b>$25,000.00</b>
-                                                </td>
-                                                <td><b>$35,000,000.00</b></td>
-                                                <td style="text-align:center"><a target='_blank' asp-controller="OrderProcess" asp-action="Invoice"><i class="fa fa-eye"></i></a></td>
-                                            </tr>
+                                            @if (Model != null && Model.Count > 0)
+                                            {
+                                                @foreach (var orderProcess in Model)
+                                                {
+                                                    <tr>
+                                                        <td>@GetFormattedOrderId(orderProcess.OrderId)</td>
+                                                        <td>@orderProcess.Aircraft.ModelName</td>
+                                                        <td>@orderProcess.Customer.FullName</td>
+                                                        <td>@orderProcess.SeatingOption.SubCategoryName <br> <b>$@orderProcess.SeatingPrice.ToString("N2")</b></td>
+                                                        <td>@orderProcess.InteriorDesign.SubCategoryName <br> <b>$@orderProcess.InteriorPrice.ToString("N2")</b></td>
+                                                        <td>@orderProcess.ConnectivityOption.SubCategoryName <br> <b>$@orderProcess.ConnectivityPrice.ToString("N2")</b></td>
+                                                        <td>
+                                                            @orderProcess.EntertainmentOption.SubCategoryName <br>
+                                                            <b>$@orderProcess.EntertainmentPrice.ToString("N2")</b>
+                                                        </td>
+                                                        <td><b>$@orderProcess.FinalAmount.ToString("N2")</b></td>
+                                                        <td style="text-align:center"><a target='_blank' asp-route-id="@orderProcess.OrderId" asp-controller="Order" asp-action="Invoice"><i class="fa fa-eye"></i></a></td>
+                                                    </tr>
+                                                }
+                                            }
 
                                         </tbody>
                                     </table>
@@ -118,3 +92,10 @@
     <br><br><br>
 </div>
 <!-- /page content -->
+@functions {
+    // Helper function to format the OrderId as "RAA0001", "RAA0002", etc.
+    public string GetFormattedOrderId(int orderId)
+    {
+        return $"RAA{orderId:D4}";
+    }
+}

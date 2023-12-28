@@ -5,6 +5,18 @@
       "PackagePath": "staticwebassets\\Raythose.bundle.scp.css"
     },
     {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\admin\\Invoice\\dimension.png",
+      "PackagePath": "staticwebassets\\admin\\Invoice\\dimension.png"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\admin\\Invoice\\logo.png",
+      "PackagePath": "staticwebassets\\admin\\Invoice\\logo.png"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\admin\\Invoice\\style.css",
+      "PackagePath": "staticwebassets\\admin\\Invoice\\style.css"
+    },
+    {
       "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\admin\\build\\css\\custom.css",
       "PackagePath": "staticwebassets\\admin\\build\\css\\custom.css"
     },

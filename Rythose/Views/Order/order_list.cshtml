@@ -55,23 +55,25 @@
 
 
                                         <tbody>
-                                            @foreach (var orderProcess in Model)
+                                            @if (Model != null && Model.Count > 0)
                                             {
-                                                <tr>
-                                                    <td>@orderProcess.OrderId</td>
-                                                    <td>@orderProcess.AircraftId</td>
-                                                    <td>@orderProcess.CustomerId</td>
-                                                    <td>@orderProcess.Seating</td>
-                                                    <td>@orderProcess.Interior</td>
-                                                    <td>@orderProcess.Connectivity</td>
-                                                    <td>@orderProcess.Entertainment</td>
-                                                    <td>
-                                                        <a asp-controller="Order" asp-action="start_manufacture" asp-route-id="@orderProcess.OrderId"
-                                                           class="btn btn-sm btn-info">Start</a>
-                                                    </td>
-                                                </tr>
+                                                @foreach (var orderProcess in Model)
+                                                {
+                                                    <tr>
+                                                        <td>@orderProcess.OrderId</td>
+                                                        <td>@orderProcess.Aircraft.ModelName</td>
+                                                        <td>@orderProcess.Customer.FullName</td>
+                                                        <td>@orderProcess.SeatingOption.SubCategoryName</td>
+                                                        <td>@orderProcess.InteriorDesign.SubCategoryName</td>
+                                                        <td>@orderProcess.ConnectivityOption.SubCategoryName</td>
+                                                        <td>@orderProcess.EntertainmentOption.SubCategoryName</td>
+                                                        <td>
+                                                            <a asp-controller="Order" asp-action="start_manufacture" asp-route-id="@orderProcess.OrderId"
+                                                            class="btn btn-sm btn-info">Start</a>
+                                                        </td>
+                                                    </tr>
+                                                }
                                             }
-
 
                                         </tbody>
                                     </table>

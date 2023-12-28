@@ -45,69 +45,49 @@
                                                 <th>ID</th>
                                                 <th>Aircraft</th>
                                                 <th>Customer</th>
+                                                <th>Contact</th>
+                                                <th>Email</th>
                                                 <th>Address</th>
-                                                <th>Shipping Company</th>
                                                 <th>Shipment Status</th>
-                                                <th>Compelete</th>
                                             </tr>
                                         </thead>
 
 
                                         <tbody>
+                                            @if (Model != null && Model.Count > 0)
+                                            {
+                                            @foreach (var orderProcess in Model)
+                                            {
                                             <tr>
-                                                <td>001</td>
-                                                <td>Cirrus Vision SF50</td>
-                                                <td><b>Jhon Doe </b><br> +94716987456<br>Canada</td>
-                                                <td>
-                                                    Willow st, Jane Austin, <br>Toronto<br> 11758
+                                                    <td>@orderProcess.OrderId</td>
+                                                    <td>@orderProcess.Aircraft.ModelName</td>
+                                                    <td><b>@orderProcess.Customer.FullName </b></td>
+                                                    <td> @orderProcess.Customer.Contact<br>@orderProcess.Customer.Country</td>
+                                                    <td><b>@orderProcess.Customer.Email </b>y</td>
+                                                    <td>
+                                                        @orderProcess.Customer.Address, <br>@orderProcess.Customer.City<br> 11758
                                                 </td>
                                                 <td>
-                                                    <b>ABC Logistics </b><br> +94884115461<br>15 Jane St,
-                                                    Lousiana,
-                                                    Canada
-                                                </td>
-                                                <td><span class="badge badge-primary" style="padding:4px">Dispatched</span></td>
-                                                <td>
-                                                    <a class="btn btn-sm btn-primary" style="color:white">Complete</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>001</td>
-                                                <td>Cirrus Vision SF50</td>
-                                                <td><b>Jhon Doe </b><br> +94716987456<br>Canada</td>
-                                                <td>
-                                                    Willow st, Jane Austin, <br>Toronto<br> 11758
-                                                </td>
-                                                <td>
-                                                    <b>ABC Logistics </b><br> +94884115461<br>15 Jane St,
-                                                    Lousiana,
-                                                    Canada
-                                                </td>
-                                                <td><span class="badge badge-secondary" style="padding:4px">Shipped</span></td>
-                                                <td>
-                                                    <a class="btn btn-sm btn-primary" style="color:white">Complete</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>001</td>
-                                                <td>Cirrus Vision SF50</td>
-                                                <td><b>Jhon Doe </b><br> +94716987456<br>Canada</td>
-                                                <td>
-                                                    Willow st, Jane Austin, <br>Toronto<br> 11758
-                                                </td>
-                                                <td>
-                                                    <b>ABC Logistics </b><br> +94884115461<br>15 Jane St,
-                                                    Lousiana,
-                                                    Canada
-                                                </td>
-                                                <td>
-                                                    <span class="badge badge-success" style="padding:4px">Local Country</span>
-                                                </td>
-                                                <td>
-                                                    <a class="btn btn-sm btn-primary" style="color:white">Complete</a>
-                                                </td>
-                                            </tr>
+                                                        <a asp-controller="" asp-action="" asp-route-id="@orderProcess.OrderId">
+                                                        @if (orderProcess.OrderStatus == "Dispatched")
+                                                        {
+                                                            <span class="badge badge-primary" style="padding:4px">Dispatched</span>
+                                                        }
+                                                        else if (orderProcess.OrderStatus == "Shipped")
+                                                        {
+                                                            <span class="badge badge-default" style="padding:4px">Shipped</span>
+                                                        }
+                                                        else if (orderProcess.OrderStatus == "Local Country")
+                                                        {
+                                                            <span class="badge badge-success" style="padding:4px">Local Country</span>
+                                                        }else{
 
+                                                        }
+                                                        </a>
+                                                    </td>
+                                            </tr>
+                                            }
+                                            }
                                         </tbody>
                                     </table>
                                 </div>

@@ -20,10 +20,6 @@ namespace Raythose.Models
         [MaxLength(10)]
         public string UserType { get; set; }
 
-        [Required]
-        [MaxLength(150)]
-        public string StaffName { get; set; }
-
 
 
     }
