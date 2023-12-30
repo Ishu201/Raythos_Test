@@ -37,7 +37,7 @@ namespace Raythose.Models
 
         [Required]
         [MaxLength(20)]
-        public string Stock { get; set; } = "active";
+        public int Stock { get; set; } 
 
         [ForeignKey("MainId")]
         public MainCategory MainCategory { get; set; }

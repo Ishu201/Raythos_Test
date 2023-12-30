@@ -49,6 +49,7 @@
                                                 <th>Interior <br> Design</th>
                                                 <th>Connectivity <br> Option</th>
                                                 <th>Entertaintment <br> Option</th> 
+                                                <th>Order <br /> Date</th>
                                                 <th>Process</th>
                                             </tr>
                                         </thead>
@@ -67,6 +68,7 @@
                                                         <td>@orderProcess.InteriorDesign.SubCategoryName</td>
                                                         <td>@orderProcess.ConnectivityOption.SubCategoryName</td>
                                                         <td>@orderProcess.EntertainmentOption.SubCategoryName</td>
+                                                        <td>@orderProcess.OrderDate</td>
                                                         <td>
                                                             <a asp-controller="Order" asp-action="start_manufacture" asp-route-id="@orderProcess.OrderId"
                                                             class="btn btn-sm btn-info">Start</a>

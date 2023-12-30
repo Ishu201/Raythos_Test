@@ -17,8 +17,8 @@
                 <div class="cta-content">
                     <br>
                     <br>
-                    <h2> <em>Cirrus Vision SF50</em></h2>
-                    <p style="font-size:22px">$3,500,000.00</p>
+                    <h2> <em>@Model.ModelName</em></h2>
+                    <p style="font-size:22px">$@Model.Price.ToString("N2")</p>
                 </div>
             </div>
         </div>
@@ -38,18 +38,33 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" style="height: 400px; object-fit: cover;" src="~/web/assets/images/1.jpg"
+                            <img class="d-block w-100" style="height: 400px; object-fit: cover;" src="~/uploads/@Model.FrontImage1"
                                  alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" style="height: 400px; object-fit: cover;" src="~/web/assets/images/4.jpg"
+                            <img class="d-block w-100" style="height: 400px; object-fit: cover;" src="~/uploads/@Model.FrontImage2"
                                  alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" style="height: 400px; object-fit: cover;" src="~/web/assets/images/7.png"
+                            <img class="d-block w-100" style="height: 400px; object-fit: cover;" src="~/uploads/@Model.FrontImage3"
+                                 alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" style="height: 400px; object-fit: cover;" src="~/uploads/@Model.InnerImage1"
+                                 alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" style="height: 400px; object-fit: cover;" src="~/uploads/@Model.InnerImage2"
+                                 alt="Third slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" style="height: 400px; object-fit: cover;" src="~/uploads/@Model.InnerImage3"
                                  alt="Third slide">
                         </div>
                     </div>
@@ -68,30 +83,39 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <label>Passenger Capacity:</label>
-                        <p>5 max</p>
+                        <p>@Model.Passengers max</p>
                         <br><label>Cabin Dimensions:</label>
-                        <p>Width 4.8 ft</p>
-                        <p>Height 4.7 ft</p>
-                        <p>Length 9.8 ft</p>
+                        <p>Width @Model.CabinWidth ft</p>
+                        <p>Height @Model.CabinHeight ft</p>
+                        <p>Length @Model.CabinLength ft</p>
                         <br><label>Speed:</label>
-                        <p>20 knots</p>
+                        <p>@Model.Speed knots</p>
 
                     </div>
 
                     <div class="col-lg-6">
                         <label>Baggage Capacity:</label>
-                        <p>63.0 cu. ft </p>
+                        <p>@Model.Baggage cu. ft </p>
                         <br><label>Range:</label>
-                        <p>2 Hours</p>
+                        <p>@Model.Range Hours</p>
                         <br><label>Feul Burning:</label>
-                        <p>2 hours</p>
-
+                        <p>@Model.Fuel gph</p>
+                        <br />
+                        @if (Model.Quantity == 0)
+                        {
+                            <span style="background-color:firebrick;padding:8px;font-size:13px;color:white">Sold Out</span>
+                        }
+                        else
+                        {
+                            <span style="background-color:limegreen;padding:8px;font-size:13px;color:white">Available</span>
+                        }
+                        
                         <br>
                     </div>
                     <div class="col-lg-12">
-                        <br>
+                        <br><br />
                         <center>
-                            <img src="~/web/assets/images/221.gif" alt="">
+                            <img src="~/uploads/@Model.SeatingImage" alt="">
                         </center>
 
                     </div>
@@ -105,20 +129,19 @@
             <div class="col-lg-12">
                 <br>
                 <p>
-                    The Citation Mustang is a very light jet with spirit of a heavier jet. The speed and range of the
-                    performance inspired
-                    Mustang will tackle the sky while delivering the efficiency of a lighter aircraft. It’s aerodynamic design
-                    and advanced
-                    technology excels in short-field performance situations. The cozy interior boasts amazing finishes and the
-                    highest-quality materials for the upper class luxury you come to expect in a business jet. The Mustang’s
-                    cabin has six
-                    large oval windows which provide incredible views and abundant natural light. Looking to rent a private jet
-                    like the
-                    Citation Mustang? Visit our Charter page for a free quote.
+                    @Model.Description
                 </p>
                 <br><br>
                 <div class="main-button">
-                    <a asp-action="CheckBuy" asp-controller="Aircraft" style="float:right" class="btnblue">Buy This</a>
+                    @if (Model.Quantity == 0)
+                    {
+                        <button disabled="disabled" style="float:right;background-color:darkgrey;padding:10px">Buy This</button>
+                    }
+                    else
+                    {
+                        <a asp-action="CheckBuy" asp-controller="Aircraft" asp-route-id="@Model.AircraftId" style="float:right" class="btnblue">Buy This</a>
+                    }
+                    
                 </div>
             </div>
         </div>

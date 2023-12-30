@@ -46,9 +46,10 @@
                                                 <th>Aircraft</th>
                                                 <th>Customer</th>
                                                 <th>Contact</th>
-                                                <th>Email</th>
                                                 <th>Address</th>
+                                                <th>Expected <br/> Arrival</th>
                                                 <th>Shipment Status</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
 
@@ -62,29 +63,38 @@
                                                     <td>@orderProcess.OrderId</td>
                                                     <td>@orderProcess.Aircraft.ModelName</td>
                                                     <td><b>@orderProcess.Customer.FullName </b></td>
-                                                    <td> @orderProcess.Customer.Contact<br>@orderProcess.Customer.Country</td>
-                                                    <td><b>@orderProcess.Customer.Email </b>y</td>
+                                                        <td> @orderProcess.Customer.Contact<br>@orderProcess.Customer.ZipCode</td>
                                                     <td>
-                                                        @orderProcess.Customer.Address, <br>@orderProcess.Customer.City<br> 11758
-                                                </td>
+                                                            @orderProcess.Customer.Address, <br>@orderProcess.Customer.City<br> @orderProcess.Customer.Country
+                                                        </td>
+                                                        <td><b>@orderProcess.ExpectedDate </b></td>
                                                 <td>
-                                                        <a asp-controller="" asp-action="" asp-route-id="@orderProcess.OrderId">
+                                                        
                                                         @if (orderProcess.OrderStatus == "Dispatched")
                                                         {
-                                                            <span class="badge badge-primary" style="padding:4px">Dispatched</span>
-                                                        }
-                                                        else if (orderProcess.OrderStatus == "Shipped")
-                                                        {
-                                                            <span class="badge badge-default" style="padding:4px">Shipped</span>
-                                                        }
-                                                        else if (orderProcess.OrderStatus == "Local Country")
-                                                        {
-                                                            <span class="badge badge-success" style="padding:4px">Local Country</span>
-                                                        }else{
+                                                                <a asp-controller="Order" asp-action="ToDepart" asp-route-id="@orderProcess.OrderId">
+                                                                    <span class="badge badge-primary" style="padding:4px">Dispatched</span>
+                                                                </a>
 
                                                         }
-                                                        </a>
+                                                                else if (orderProcess.OrderStatus == "Departed")
+                                                        {
+                                                            <a asp-controller="Order" asp-action="ToLocal" asp-route-id="@orderProcess.OrderId">
+                                                            <span class="badge badge-secondary" style="padding:4px">Shipped</span>
+                                                                </a>
+                                                        }
+                                                        else if (orderProcess.OrderStatus == "Local")
+                                                        {
+                                                                    <span class="badge badge-success" style="padding:4px">Destination Country</span>
+                                                        }
                                                     </td>
+                                                        <td>
+                                                            @if (orderProcess.OrderStatus == "Local")
+                                                            {
+                                                            <a asp-controller="Order" asp-action="finish_shipping" asp-route-id="@orderProcess.OrderId"
+                                                               class="btn btn-sm btn-primary">Complete</a>
+                                                            }
+                                                        </td>
                                             </tr>
                                             }
                                             }

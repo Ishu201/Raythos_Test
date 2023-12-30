@@ -26,24 +26,33 @@ namespace Rythose.Controllers
             return View(objList);
         }
 
-        public IActionResult CheckBuy()
+        public IActionResult CheckBuy(int id)
         {
+            ViewBag.Aircraft = ctx.tbl_aircraft.FirstOrDefault(a => a.AircraftId == id);
+            ViewBag.MainCategories = ctx.tbl_main_category.ToList();
+            ViewBag.SubCategories = ctx.tbl_sub_category.ToList();
             return View();
+
         }
 
-        public IActionResult Checkout()
-        {
-            return View();
-        }
+        
 
         public IActionResult ListView()
         {
-            return View();
+            IEnumerable<Aircraft> objList = ctx.tbl_aircraft.ToList();
+            return View(objList);
         }
 
-        public IActionResult SingleDetail()
+        public IActionResult SingleDetail(int id)
         {
-            return View();
+            Aircraft singleAircraft = ctx.tbl_aircraft.FirstOrDefault(a => a.AircraftId == id);
+
+            if (singleAircraft == null)
+            {
+                return NotFound();
+            }
+
+            return View(singleAircraft);
         }
 
 

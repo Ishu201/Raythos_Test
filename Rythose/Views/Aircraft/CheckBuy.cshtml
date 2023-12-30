@@ -9,6 +9,12 @@
     myLinkElement.classList.toggle("active");
 </script>
 
+<style>
+    #backbtn:hover{
+        background-color:lavender !important;
+    }
+</style>
+
 <!-- ***** Call to Action Start ***** -->
 <section class="section section-bg" id="call-to-action" style="background-image: url('/web/assets/images/back8.jpg')">
     <div class="container">
@@ -17,8 +23,8 @@
                 <div class="cta-content">
                     <br>
                     <br>
-                    <h2> <em>Cirrus Vision SF50</em></h2>
-                    <p style="font-size:22px">$3,500,000.00</p>
+                    <h2> <em>@ViewBag.Aircraft.ModelName</em></h2>
+                    <p style="font-size:22px">$@ViewBag.Aircraft.Price.ToString("N2")</p>
                 </div>
             </div>
         </div>
@@ -31,6 +37,9 @@
 
 <section class="section" id="trainers">
     <div class="container">
+        @using (Html.BeginForm("temp_order", "Order", FormMethod.Post))
+        {
+        <form>
         <center>
             <label style="font-size:20px">
                 Craft your ideal Aircraft Configuration with our customization
@@ -41,7 +50,7 @@
 
         <div class="row">
             <div class="col-lg-6">
-                <img class="d-block w-100" style="height: 350px; object-fit: cover;" src="~/web/assets/images/4.jpg"
+                <img class="d-block w-100" style="height: 350px; object-fit: cover;" src="~/uploads/@ViewBag.Aircraft.FrontImage1"
                      alt="Second slide">
             </div>
 
@@ -50,11 +59,15 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="form-group">
                             <label>Seating Options:</label>
-                            <select>
+                            <select name="seatOpt" required>
                                 <option value="">- Please Select -</option>
-                                <option value="Club Seating">Club Seating</option>
-                                <option value="Individual Seats">Individual Seats</option>
-                                <option value="Divans">Divans</option>
+                                @foreach (var cat in ViewBag.SubCategories)
+                                {
+                                    if (@cat.MainId == 1)
+                                    {
+                                        <option value="@cat.SubId">@cat.SubCategoryName</option>
+                                    }
+                                }
                             </select>
                         </div>
                     </div>
@@ -62,11 +75,15 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div class="form-group">
                             <label>Interior Design:</label>
-                            <select>
+                            <select name="intOpt" required>
                                 <option value="">- Please Select -</option>
-                                <option value="Luxury Materials">Luxury Materials</option>
-                                <option value="Semi Luxury Materials">Semi Luxury Materials</option>
-                                <option value="Custom Furnishings">Custom Furnishings</option>
+                                @foreach (var cat in ViewBag.SubCategories)
+                                {
+                                    if (@cat.MainId == 2)
+                                    {
+                                        <option value="@cat.SubId">@cat.SubCategoryName</option>
+                                    }
+                                }
                             </select>
                         </div>
                     </div>
@@ -76,12 +93,15 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12  contact-form">
                         <div class="form-group">
                             <label>Connectivity Options:</label>
-                            <select>
+                            <select name="conOpt" required>
                                 <option value="">- Please Select -</option>
-                                <option value="In-Flight Wi-Fi">In-Flight Wi-Fi</option>
-                                <option value="Satellite Communication Systems:">Satellite Communication Systems</option>
-                                <option value="Cabin Management Systems (CMS)">Cabin Management Systems (CMS)</option>
-                                <option value="Ethernet Ports and Power Outlets">Ethernet Ports and Power Outlets</option>
+                                @foreach (var cat in ViewBag.SubCategories)
+                                {
+                                    if (@cat.MainId == 3)
+                                    {
+                                        <option value="@cat.SubId">@cat.SubCategoryName</option>
+                                    }
+                                }
                             </select>
                         </div>
                     </div>
@@ -89,28 +109,16 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div>
                             <label>Entertainment Options:</label>
-                            <div>
-                                <input type="checkbox" name="entertainmentOption" value="Multiple Display Screens">
-                                <label style="font-size:12px" for="displayScreens">Multiple Display Screens</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="inFlightMovies" name="entertainmentOption"
-                                       value="In-Flight Movies and TV Shows">
-                                <label style="font-size:12px" for="inFlightMovies">In-Flight Movies and TV Shows</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="gamingConsoles" name="entertainmentOption" value="Gaming Consoles">
-                                <label style="font-size:12px" for="gamingConsoles">Gaming Consoles</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="liveTV" name="entertainmentOption" value="Live TV">
-                                <label style="font-size:12px" for="liveTV">Live TV</label>
-                            </div>
-                            <div>
-                                <input type="checkbox" id="customizedPackages" name="entertainmentOption"
-                                       value="Customized Entertainment Packages">
-                                <label style="font-size:12px" for="customizedPackages">Customized Entertainment Packages</label>
-                            </div>
+                            @foreach (var cat in ViewBag.SubCategories)
+                                {
+                                    if (@cat.MainId == 4)
+                                    {
+                                        <div>
+                                                <input type="radio"  name="entOpt" value="@cat.SubId">
+                                        <label style="font-size:12px" for="displayScreens">@cat.SubCategoryName</label>
+                                        </div>
+                                    }
+                                }
                         </div>
                     </div>
 
@@ -124,28 +132,20 @@
             <div class="col-lg-12">
                 <br>
                 <p>
-                    The Citation Mustang is a very light jet with spirit of a heavier jet. The speed and range of the
-                    performance inspired
-                    Mustang will tackle the sky while delivering the efficiency of a lighter aircraft. It’s aerodynamic design
-                    and advanced
-                    technology excels in short-field performance situations. The cozy interior boasts amazing finishes and the
-                    highest-quality materials for the upper class luxury you come to expect in a business jet. The Mustang’s
-                    cabin has six
-                    large oval windows which provide incredible views and abundant natural light. Looking to rent a private jet
-                    like the
-                    Citation Mustang? Visit our Charter page for a free quote.
+                    @ViewBag.Aircraft.Description.
                 </p>
                 <br><br>
                 <div class="main-button" style="float:right">
-                    <a asp-action="SingleDetail" asp-controller="Aircraft" style="border:1px solid #0073e6;color:#0073e6;background-color: aliceblue;"
-                       class="btnblue back">Back</a> &nbsp;
-                    <a asp-action="Checkout" asp-controller="Aircraft" style="border:1px solid #0073e6;" class=" btnblue">Checkout</a>
+                    <a id="backbtn" asp-action="SingleDetail" asp-controller="Aircraft" asp-route-id="@ViewBag.Aircraft.AircraftId" style="border:1px solid #0073e6;color:#0073e6;background-color: aliceblue;">Back</a> &nbsp;
+                            <input type="hidden" value="@ViewBag.Aircraft.AircraftId" name="AircraftId" />
+                            <input type="submit" style="border:1px solid #0073e6;padding:11px;background-color:#0073E6;color:white" class=" btnblue" value="Checkout">
                 </div>
             </div>
         </div>
 
 
-
+        </form>
+        }
     </div>
 </section>
 <!-- ***** Fleet Ends ***** -->

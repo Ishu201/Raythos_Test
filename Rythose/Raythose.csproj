@@ -29,10 +29,12 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Stripe.net" Version="43.8.0" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Migrations\" />
+    <Folder Include="Views\Payment\" />
     <Folder Include="wwwroot\admin\Invoice\" />
   </ItemGroup>
 

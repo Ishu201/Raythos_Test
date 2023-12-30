@@ -1,10 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Data.SqlClient;
 using Raythose.DB;
 using Raythose.Models;
 using Rythose.Models;
+using System.Data.SqlClient;
 using System.Diagnostics;
+using SqlParameter = Microsoft.Data.SqlClient.SqlParameter;
+using System.Linq;
+using System.Net.NetworkInformation;
 
 namespace Rythose.Controllers
 {
@@ -49,10 +54,23 @@ namespace Rythose.Controllers
             }
 
             // Fetch the lists of items from tbl_items for different categories
-            List<Item> seatingItemList = ctx.tbl_items.Where(item => item.SubId == orderItem.Seating).ToList();
-            List<Item> entertainmentItemList = ctx.tbl_items.Where(item => item.SubId == orderItem.Entertainment).ToList();
-            List<Item> interiorItemList = ctx.tbl_items.Where(item => item.SubId == orderItem.Interior).ToList();
-            List<Item> ConnectivityItemList = ctx.tbl_items.Where(item => item.SubId == orderItem.Connectivity).ToList();
+            List<Item> seatingItemList = ctx.tbl_items
+                .Where(item => item.SubId == orderItem.Seating && item.Stock > 0)
+                .ToList();
+
+            List<Item> entertainmentItemList = ctx.tbl_items
+                .Where(item => item.SubId == orderItem.Entertainment && item.Stock > 0)
+                .ToList();
+
+            List<Item> interiorItemList = ctx.tbl_items
+                .Where(item => item.SubId == orderItem.Interior && item.Stock > 0)
+                .ToList();
+
+            List<Item> connectivityItemList = ctx.tbl_items
+                .Where(item => item.SubId == orderItem.Connectivity && item.Stock > 0)
+                .ToList();
+
+
 
             // Fetch the lists of essential items for different types
             List<EssentialItems> airframeItemList = ctx.tbl_essential_items
@@ -81,7 +99,7 @@ namespace Rythose.Controllers
                 SeatingItemList = new SelectList(seatingItemList, "ItemId", "ItemName"),
                 EntertainmentItemList = new SelectList(entertainmentItemList, "ItemId", "ItemName"),
                 InteriorItemList = new SelectList(interiorItemList, "ItemId", "ItemName"),
-                ConnectivityItemList = new SelectList(ConnectivityItemList, "ItemId", "ItemName"),
+                ConnectivityItemList = new SelectList(connectivityItemList, "ItemId", "ItemName"),
                 AirframeItemList = new SelectList(airframeItemList, "EssentialId", "EssentialName"),
                 PowerplantItemList = new SelectList(powerplantItemList, "EssentialId", "EssentialName"),
                 AvionicsItemList = new SelectList(avionicsItemList, "EssentialId", "EssentialName"),
@@ -98,14 +116,29 @@ namespace Rythose.Controllers
         public IActionResult manufacture_list()
         {
             List<Order> orders = ctx.tbl_order
-            .Include(item => item.Aircraft)
-            .Include(item => item.Customer)
-            .Include(item => item.Manufacture)
-            .Where(item => item.OrderStatus == "Manufacturing")
-            .ToList();
+                .Include(item => item.Aircraft)
+                .Include(item => item.Customer)
+                .Select(item => new
+                {
+                    Order = item,
+                    Manufacture = ctx.tbl_manufacture
+                        .Where(m => m.OrderId == item.OrderId)
+                        .FirstOrDefault()
+                })
+                .Where(item => item.Order.OrderStatus == "Manufacturing")
+                .Select(item => new Order
+                {
+                    Aircraft = item.Order.Aircraft,
+                    Customer = item.Order.Customer,
+                    Manufacture = item.Manufacture
+                })
+                .ToList();
 
             return View(orders);
         }
+
+
+
 
         public IActionResult start_shipment(int id)
         {
@@ -122,7 +155,7 @@ namespace Rythose.Controllers
             List<Order> orders = ctx.tbl_order
             .Include(item => item.Aircraft)
             .Include(item => item.Customer)
-            .Where(item => item.OrderStatus == "Dispatched" || item.OrderStatus == "Shipped" || item.OrderStatus == "Local Country")
+            .Where(item =>  item.OrderStatus == "Dispatched" || item.OrderStatus == "Departed" || item.OrderStatus == "Local")
             .ToList();
 
             return View(orders);
@@ -160,6 +193,251 @@ namespace Rythose.Controllers
             return View(order);
         }
 
+        public ActionResult submit_manufacture(string orderDate, string[] interiorMaterials, string[] entertainmentOptions, string seatingOption, string[] connectivityOptions, int[] airframe, int[] powerplant, int[] avionics, int[] miscellaneousComponents, int orderId)
+        {
+            string sql1 = "UPDATE tbl_order SET OrderStatus = 'Manufacturing' WHERE OrderId = @OrderId";
+            ctx.Database.ExecuteSqlRaw(sql1, new SqlParameter("@OrderId", orderId));
+
+            UpdateStockForItems(interiorMaterials);
+            UpdateStockForItems(entertainmentOptions);
+            UpdateStockForItem(seatingOption);
+            UpdateStockForItems(connectivityOptions);
+
+            UpdateEssentialStockForItems(airframe);
+            UpdateEssentialStockForItems(powerplant);
+            UpdateEssentialStockForItems(avionics);
+            UpdateEssentialStockForItems(miscellaneousComponents);
+
+            var seatingItemName = ctx.tbl_items
+                .Where(item => item.ItemId == int.Parse(seatingOption))
+                .Select(item => item.ItemName)
+                .FirstOrDefault();
+
+            var interiorItemNames = ctx.tbl_items
+                .Where(item => interiorMaterials.Contains(item.ItemId.ToString()))
+                .Select(item => item.ItemName)
+                .ToList();
+
+            var connectivityItemNames = ctx.tbl_items
+                .Where(item => connectivityOptions.Contains(item.ItemId.ToString()))
+                .Select(item => item.ItemName)
+                .ToList();
+
+            var entertainmentItemNames = ctx.tbl_items
+                .Where(item => entertainmentOptions.Contains(item.ItemId.ToString()))
+                .Select(item => item.ItemName)
+                .ToList();
+
+
+            var airframeNames = ctx.tbl_essential_items
+                .Where(item => airframe.Contains(item.EssentialId))
+                .Select(item => item.EssentialName)
+                .ToList();
+
+            var powerplantNames = ctx.tbl_essential_items
+                .Where(item => powerplant.Contains(item.EssentialId))
+                .Select(item => item.EssentialName)
+                .ToList();
+
+            var avionicsNames = ctx.tbl_essential_items
+                .Where(item => avionics.Contains(item.EssentialId))
+                .Select(item => item.EssentialName)
+                .ToList();
+
+            var miscellaneousComponentNames = ctx.tbl_essential_items
+                .Where(item => miscellaneousComponents.Contains(item.EssentialId))
+                .Select(item => item.EssentialName)
+                .ToList();
+
+            string insertSql = @"
+                INSERT INTO tbl_manufacture (OrderId, Date, Seating, Interior, Connectivity, Entertainment, Airframe, Powerplant, Avionics, Miscellaneous)
+                VALUES (@OrderId, @Date, @Seating, @Interior, @Connectivity, @Entertainment, @Airframe, @Powerplant, @Avionics, @Miscellaneous)
+            ";
+
+            ctx.Database.ExecuteSqlRaw(insertSql,
+                new Microsoft.Data.SqlClient.SqlParameter("@OrderId", orderId),
+                new Microsoft.Data.SqlClient.SqlParameter("@Date", orderDate),
+                new Microsoft.Data.SqlClient.SqlParameter("@Seating", seatingItemName),
+                new Microsoft.Data.SqlClient.SqlParameter("@Interior", string.Join(",", interiorItemNames)),
+                new Microsoft.Data.SqlClient.SqlParameter("@Connectivity", string.Join(",", connectivityItemNames)),
+                new Microsoft.Data.SqlClient.SqlParameter("@Entertainment", string.Join(",", entertainmentItemNames)),
+                new Microsoft.Data.SqlClient.SqlParameter("@Airframe", string.Join(",", airframeNames)),
+                new Microsoft.Data.SqlClient.SqlParameter("@Powerplant", string.Join(",", powerplantNames)),
+                new Microsoft.Data.SqlClient.SqlParameter("@Avionics", string.Join(",", avionicsNames)),
+                new Microsoft.Data.SqlClient.SqlParameter("@Miscellaneous", string.Join(",", miscellaneousComponentNames))
+            );
+
+            ctx.SaveChanges();
+
+            return RedirectToAction("order_list");
+        }
+
+        public ActionResult submit_shipping(string ShippedDate, string ExpectedDate, int orderId)
+        {
+            string sql1 = "UPDATE tbl_order SET OrderStatus = 'Dispatched', ShippedDate = @ShippedDate, ExpectedDate = @ExpectedDate WHERE OrderId = @OrderId";
+
+            ctx.Database.ExecuteSqlRaw(sql1,
+                new SqlParameter("@ShippedDate", ShippedDate),
+                new SqlParameter("@ExpectedDate", ExpectedDate),
+                new SqlParameter("@OrderId", orderId)
+            );
+
+            ctx.SaveChanges();
+
+            return RedirectToAction("manufacture_list");
+        }
+
+
+        public ActionResult ToDepart(int id)
+        {
+            string sql1 = "UPDATE tbl_order SET OrderStatus = 'Departed' WHERE OrderId = @OrderId";
+            ctx.Database.ExecuteSqlRaw(sql1, new SqlParameter("@OrderId", id));
+
+            ctx.SaveChanges();
+
+            return RedirectToAction("shipping_list");
+        }
+
+        public ActionResult ToLocal(int id)
+        {
+            string sql1 = "UPDATE tbl_order SET OrderStatus = 'Local' WHERE OrderId = @OrderId";
+            ctx.Database.ExecuteSqlRaw(sql1, new SqlParameter("@OrderId", id));
+
+            ctx.SaveChanges();
+
+            return RedirectToAction("shipping_list");
+        }
+
+        public ActionResult finish_shipping(int id)
+        {
+            string formattedDate = DateTime.Now.ToString("yyyy-MM-dd");
+            string sql1 = "UPDATE tbl_order SET OrderStatus = 'Completed', ActualDate = @FormattedDate WHERE OrderId = @OrderId";
+
+            ctx.Database.ExecuteSqlRaw(sql1,
+                new SqlParameter("@FormattedDate", formattedDate),
+                new SqlParameter("@OrderId", id)
+            );
+
+            ctx.SaveChanges();
+
+            return RedirectToAction("shipping_list");
+        }
+
+
+        private void UpdateStockForItem(string itemId)
+        {
+            string updateSql = "UPDATE tbl_items SET Stock = (Stock - 1) WHERE ItemId = @ItemId";
+            ctx.Database.ExecuteSqlRaw(updateSql, new SqlParameter("@ItemId", itemId));
+        }
+
+        private void UpdateStockForItems(IEnumerable<string> itemIds)
+        {
+            foreach (var itemId in itemIds)
+            {
+                UpdateStockForItem(itemId);
+            }
+        }
+
+        private void UpdateEssentialStockForItems(int[] essentialIds)
+        {
+            foreach (var essentialId in essentialIds)
+            {
+                string updateSql = "UPDATE tbl_essential_items SET EssentialStock = (EssentialStock - 1) WHERE EssentialId = @EssentialId";
+                ctx.Database.ExecuteSqlRaw(updateSql, new SqlParameter("@EssentialId", essentialId));
+            }
+        }
+
+
+
+
+
+        //main order process customer end
+        public ActionResult temp_order(int seatOpt, int intOpt, int conOpt, int entOpt, int AircraftId)
+        {
+            var aircraft = ctx.tbl_aircraft.FirstOrDefault(a => a.AircraftId == AircraftId);
+
+            var seatingPrice = ctx.tbl_sub_category.FirstOrDefault(s => s.SubId == seatOpt)?.Price ?? 0;
+            var interiorPrice = ctx.tbl_sub_category.FirstOrDefault(s => s.SubId == intOpt)?.Price ?? 0;
+            var connectivityPrice = ctx.tbl_sub_category.FirstOrDefault(s => s.SubId == conOpt)?.Price ?? 0;
+            var entertainmentPrice = ctx.tbl_sub_category.FirstOrDefault(s => s.SubId == entOpt)?.Price ?? 0;
+
+
+            decimal vatRate = 0.15m; // 15%
+            decimal aircraftPriceDecimal = (decimal)(aircraft?.Price ?? 0);
+            decimal seatingPriceDecimal = (decimal)(seatingPrice);
+            decimal interiorPriceDecimal = (decimal)(interiorPrice);
+            decimal connectivityPriceDecimal = (decimal)(connectivityPrice);
+            decimal entertainmentPriceDecimal = (decimal)(entertainmentPrice);
+
+            decimal sumOfPrices = (decimal)(aircraftPriceDecimal + seatingPriceDecimal + interiorPriceDecimal + connectivityPriceDecimal + entertainmentPriceDecimal);
+            decimal vat = sumOfPrices * vatRate;
+            decimal finalAmount = sumOfPrices + vat;
+
+            // Insert into tbl_order using Entity Framework
+            string Sql = $@"
+                    INSERT INTO tbl_order (
+                        AircraftId,
+                        CustomerId,
+                        Seating,
+                        Interior,
+                        Connectivity,
+                        Entertainment,
+                        OrderStatus,
+                        PaymentStatus,
+                        AircraftPrice,
+                        SeatingPrice,
+                        InteriorPrice,
+                        ConnectivityPrice,
+                        EntertainmentPrice,
+                        VAT,
+                        FinalAmount,
+                        Status,
+                        OrderDate,
+                        ShippedDate,
+                        ExpectedDate,
+                        ActualDate
+                    )
+                    VALUES (
+                        {AircraftId},
+                        0,
+                        {seatOpt},
+                        {intOpt},
+                        {conOpt},
+                        {entOpt},
+                        'temp',
+                        'pending',
+                        {(aircraft?.Price ?? 0)},
+                        {seatingPrice},
+                        {interiorPrice},
+                        {connectivityPrice},
+                        {entertainmentPrice},
+                        {(float)vat},
+                        {(float)finalAmount},
+                        'active',
+                        '0000-00-00',
+                        '0000-00-00',
+                        '0000-00-00',
+                        '0000-00-00'
+                    )";
+
+                ctx.Database.ExecuteSqlRaw(Sql);
+                ctx.SaveChanges();
+
+            int orderId = ctx.tbl_order.Max(o => o.OrderId);
+            return RedirectToAction("Checkout", new { id = orderId });
+
+        }
+
+
+
+        public IActionResult Checkout(int id)
+        {
+            Order orderItem = ctx.tbl_order
+            .Include(item => item.Aircraft)
+            .FirstOrDefault(item => item.OrderId == id);
+            ViewBag.SubCategories = ctx.tbl_sub_category.ToList();
+            return View(orderItem);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

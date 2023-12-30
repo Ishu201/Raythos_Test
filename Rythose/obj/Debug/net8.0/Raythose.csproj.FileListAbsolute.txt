@@ -74,6 +74,8 @@ E:\Top Up SE\Application Development\Coursework 02\Proj\Rythose\Rythose\bin\Debu
 E:\Top Up SE\Application Development\Coursework 02\Proj\Rythose\Rythose\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 E:\Top Up SE\Application Development\Coursework 02\Proj\Rythose\Rythose\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 E:\Top Up SE\Application Development\Coursework 02\Proj\Rythose\Rythose\bin\Debug\net8.0\Mono.TextTemplating.dll
+E:\Top Up SE\Application Development\Coursework 02\Proj\Rythose\Rythose\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\Top Up SE\Application Development\Coursework 02\Proj\Rythose\Rythose\bin\Debug\net8.0\Stripe.net.dll
 E:\Top Up SE\Application Development\Coursework 02\Proj\Rythose\Rythose\bin\Debug\net8.0\System.CodeDom.dll
 E:\Top Up SE\Application Development\Coursework 02\Proj\Rythose\Rythose\bin\Debug\net8.0\System.Composition.AttributedModel.dll
 E:\Top Up SE\Application Development\Coursework 02\Proj\Rythose\Rythose\bin\Debug\net8.0\System.Composition.Convention.dll

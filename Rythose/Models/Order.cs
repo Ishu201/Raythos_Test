@@ -66,6 +66,12 @@ namespace Raythose.Models
         [Required]
         public string OrderDate { get; set; }
 
+        public string? ShippedDate { get; set; }
+
+        public string? ExpectedDate { get; set; }
+
+        public string? ActualDate { get; set; }
+
 
         [ForeignKey("AircraftId")]
         public Aircraft Aircraft { get; set; }
@@ -87,6 +93,7 @@ namespace Raythose.Models
 
         [ForeignKey("OrderId")]
         public Manufacture Manufacture { get; set; }
+
 
     }
 }

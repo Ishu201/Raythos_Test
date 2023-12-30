@@ -34,10 +34,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWlyY3JhZnRcQ2hlY2tCdXkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[E:/Top Up SE/Application Development/Coursework 02/Proj/Rythose/Rythose/Views/Aircraft/Checkout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWlyY3JhZnRcQ2hlY2tvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [E:/Top Up SE/Application Development/Coursework 02/Proj/Rythose/Rythose/Views/Aircraft/ListView.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWlyY3JhZnRcTGlzdFZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -96,6 +92,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/Top Up SE/Application Development/Coursework 02/Proj/Rythose/Rythose/Views/Inventory/StockItems.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XFN0b2NrSXRlbXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Top Up SE/Application Development/Coursework 02/Proj/Rythose/Rythose/Views/Order/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hlY2tvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Top Up SE/Application Development/Coursework 02/Proj/Rythose/Rythose/Views/Order/completed_list.cshtml]

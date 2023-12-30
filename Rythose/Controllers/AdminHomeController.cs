@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Raythose.DB;
+using Raythose.Models;
 using Rythose.Models;
 using System.Diagnostics;
 
@@ -6,16 +8,17 @@ namespace Rythose.Controllers
 {
     public class AdminHomeController : Controller
     {
-        private readonly ILogger<AdminHomeController> _logger;
+        private readonly ApplicationDbContext ctx;
 
-        public AdminHomeController(ILogger<AdminHomeController> logger)
+        public AdminHomeController(ApplicationDbContext db)
         {
-            _logger = logger;
+            this.ctx = db;
         }
 
         public IActionResult Index()
         {
-            return View();
+            IEnumerable<Aircraft> objList = ctx.tbl_aircraft.ToList();
+            return View(objList);
         }
 
 

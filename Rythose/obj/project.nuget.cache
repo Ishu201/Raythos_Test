@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "6uPLiVzWZu4+bxpKuNacJOYyFIgCdoVpyEmQM9WY03WRGBGqM2WNZJPJY2VPZeuIuL1exvrVmGUt4EswPj62BQ==",
+  "dgSpecHash": "WOiDSN4n0LxCZK54SNEsbIKoP0H/u6tFqJzIigS+xY+L6mP4OHDGUFIX8R6y4apIJt9UVI3xnp9/hjhrDEzpNw==",
   "success": true,
   "projectFilePath": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\Raythose.csproj",
   "expectedPackageFiles": [
@@ -48,10 +48,12 @@
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
+    "C:\\Users\\LENOVO\\.nuget\\packages\\stripe.net\\43.8.0\\stripe.net.43.8.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\system.codedom\\4.7.0\\system.codedom.4.7.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\LENOVO\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",

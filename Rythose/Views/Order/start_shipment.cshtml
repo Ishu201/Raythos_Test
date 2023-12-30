@@ -34,6 +34,8 @@
                     </div>
 
                     <div class="x_content">
+                        @using (Html.BeginForm("submit_shipping", "Order", FormMethod.Post))
+                        {
                         <form>
                             <div class="row">
                                 <div class="col-sm-4">
@@ -69,18 +71,17 @@
                                     <label class="col-form-label ">
                                         Shipped Date <span class="required">*</span>
                                     </label>
-                                    <input class="date-picker form-control" style="width:80%"
+                                        <input class="date-picker form-control" name="ShippedDate" required style="width:80%"
                                            placeholder="dd-mm-yyyy" type="date">
                                     <br>
                                     <label class="col-form-label ">
                                         Expected Delivery Date <span class="required">*</span>
                                     </label>
-                                    <input class="date-picker form-control" style="width:80%"
+                                        <input class="date-picker form-control" name="ExpectedDate" required style="width:80%"
                                            placeholder="dd-mm-yyyy" type="date">
-
                                     <br>
 
-
+                                        <input type="hidden" name="OrderId" value="@Model.OrderId" />
                                     <input type="submit" class="btn btn-small btn-success"
                                            style="position:absolute;bottom:0%;right:0%"
                                            value="Ship Aircraft">
@@ -88,6 +89,7 @@
 
                             </div>
                         </form>
+                        }
                     </div>
                 </div>
             </div>

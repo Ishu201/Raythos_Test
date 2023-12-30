@@ -60,7 +60,7 @@
                                                 @foreach (var orderProcess in Model)
                                                 {
                                                     <tr>
-                                                        <td>@orderProcess.OrderId</td>
+                                                        <td>@orderProcess.Manufacture.OrderId</td>
                                                         <td>@orderProcess.Aircraft.ModelName</td>
                                                         <td>@orderProcess.Customer.FullName</td>
                                                         <td>@orderProcess.Manufacture.Date</td>
@@ -69,7 +69,7 @@
                                                         <td>@orderProcess.Manufacture.Connectivity</td>
                                                         <td>@orderProcess.Manufacture.Entertainment</td>
                                                         <td>
-                                                            <a asp-controller="Order" asp-action="start_shipment" asp-route-id="@orderProcess.OrderId"
+                                                            <a asp-controller="Order" asp-action="start_shipment" asp-route-id="@orderProcess.Manufacture.OrderId"
                                                             class="btn btn-sm btn-warning"
                                                             style="color:black">Complete</a>
                                                         </td>
