@@ -100,7 +100,7 @@
                                     </a>
                                     <ul id="customerManagement_block" class="nav child_menu">
                                         <li id ="customer_list"><a asp-area="" asp-controller="Customer" asp-action="CusList">Customer List</a></li>
-                                        <li id ="customer_pref"><a asp-area="" asp-controller="Customer" asp-action="CusPref">User Preference</a></li>
+                                        <li id ="customer_pref"><a asp-area="" asp-controller="Aircraft" asp-action="CustomerPreference">User Preference</a></li>
                                     </ul>
                                 </li>
                                 <li id="userManagement">
@@ -164,6 +164,30 @@
 </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+    function confirmRemove(action) {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "Once removed, you cannot recover this item!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Remove"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    $.post(action, function (data) {
+                        location.reload();
+                    });
+                } else {
+                    Swal.fire("Item not removed.", "", "info");
+                }
+            });
+    }
+</script>
+
 
     <!-- jQuery -->
     <script src="~/admin/vendors/jquery/dist/jquery.min.js"></script>
@@ -195,6 +219,58 @@
     <!-- Custom Theme Scripts -->
     <script src="~/admin/build/js/custom.min.js"></script>
 
+    @{
+        var error = Context.Session.GetString("Error");
+        var success = Context.Session.GetString("Success");
+    }
+
+    @if (!string.IsNullOrEmpty(error))
+    {
+        <div class="alert alert-danger alert-dismissible" style="width:fit-content;float:right;position:fixed;top:5%;right:1%" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <strong>Error..!</strong> @Context.Session.GetString("Error");
+        </div>
+        Context.Session.Remove("Error");
+    }
+    
+
+    @if (!string.IsNullOrEmpty(success))
+    {
+        <div class="alert alert-success alert-dismissible" style="width:fit-content;float:right;position:fixed;top:5%;right:1%" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+            <strong>Done..!</strong> @Context.Session.GetString("Success");
+        </div>
+
+        Context.Session.Remove("Success");
+    }
+
+
+    <script>
+        // Function to remove the alert element after a specified delay
+        function removeAlert(alertElement) {
+            alertElement.style.display = 'none';
+        }
+
+        // Check if the error alert exists and set a timeout to remove it
+        var errorAlert = document.querySelector('.alert-danger');
+        if (errorAlert) {
+            setTimeout(function () {
+                removeAlert(errorAlert);
+            }, 2000); // 2000 milliseconds = 2 seconds
+        }
+
+        // Check if the success alert exists and set a timeout to remove it
+        var successAlert = document.querySelector('.alert-success');
+        if (successAlert) {
+            setTimeout(function () {
+                removeAlert(successAlert);
+            }, 2000); // 2000 milliseconds = 2 seconds
+        }
+    </script>
 </body>
 
 </html>

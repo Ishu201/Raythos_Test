@@ -178,11 +178,24 @@ namespace Rythose.Controllers
 
         public IActionResult Invoice(int id)
         {
-            Order order = ctx.tbl_order
-                .Include(item => item.Aircraft)
-                .Include(item => item.Customer)
-                .Include(item => item.Manufacture)
-                .FirstOrDefault(item => item.OrderId == id);
+            var order = ctx.tbl_order
+            .Where(item => item.OrderId == id)
+            .GroupJoin(
+                ctx.tbl_manufacture,
+                order => order.OrderId,
+                manufacture => manufacture.OrderId,
+                (order, manufactures) => new { Order = order, Manufactures = manufactures })
+            .SelectMany(
+                result => result.Manufactures.DefaultIfEmpty(),
+                (result, manufacture) => new
+                {
+                    Order = result.Order,
+                    Aircraft = result.Order.Aircraft,
+                    Customer = result.Order.Customer,
+                    Manufacture = manufacture
+                })
+            .FirstOrDefault();
+
 
             if (order == null)
             {
@@ -368,6 +381,8 @@ namespace Rythose.Controllers
             decimal interiorPriceDecimal = (decimal)(interiorPrice);
             decimal connectivityPriceDecimal = (decimal)(connectivityPrice);
             decimal entertainmentPriceDecimal = (decimal)(entertainmentPrice);
+            string customerIdString = HttpContext.Session.GetString("Cus");
+            int customerId = Convert.ToInt32(customerIdString);
 
             decimal sumOfPrices = (decimal)(aircraftPriceDecimal + seatingPriceDecimal + interiorPriceDecimal + connectivityPriceDecimal + entertainmentPriceDecimal);
             decimal vat = sumOfPrices * vatRate;
@@ -399,7 +414,7 @@ namespace Rythose.Controllers
                     )
                     VALUES (
                         {AircraftId},
-                        0,
+                        {customerId},
                         {seatOpt},
                         {intOpt},
                         {conOpt},

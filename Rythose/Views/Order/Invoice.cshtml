@@ -27,7 +27,7 @@
             <div><span>CLIENT</span> @Model.Customer.FullName</div>
             <div><span>ADDRESS</span> @Model.Customer.Address, @Model.Customer.City, @Model.Customer.Country</div>
             <div><span>EMAIL</span> <a>@Model.Customer.Email</a></div>
-            <div><span>DATE</span> @Model.OrderDate</div>
+            <div><span>DATE</span> @Model.Order.OrderDate</div>
         </div>
     </header>
     <main>
@@ -41,26 +41,26 @@
             <tbody>
                 <tr>
                     <td colspan="4" class="desc">@Model.Aircraft.ModelName Airplane</td>
-                    <td class="total">$@Model.AircraftPrice.ToString("N2")</td>
+                    <td class="total">$@Model.Order.AircraftPrice.ToString("N2")</td>
                 </tr>
                 <tr>
                     <td colspan="4" class="desc">Seating Options <br /> (@Model.Manufacture.Seating)</td>
-                    <td class="total">$@Model.SeatingPrice.ToString("N2")</td>
+                    <td class="total">$@Model.Order.SeatingPrice.ToString("N2")</td>
                 </tr>
                 <tr>
                     <td colspan="4" class="desc">Interior Design <br /> (@Model.Manufacture.Interior)</td>
-                    <td class="total">$@Model.InteriorPrice.ToString("N2")</td>
+                    <td class="total">$@Model.Order.InteriorPrice.ToString("N2")</td>
                 </tr>
                 <tr>
                     <td colspan="4" class="desc">Connectivity Options <br /> (@Model.Manufacture.Connectivity)</td>
-                    <td class="total">$@Model.ConnectivityPrice.ToString("N2")</td>
+                    <td class="total">$@Model.Order.ConnectivityPrice.ToString("N2")</td>
                 </tr>
                 <tr>
                     <td colspan="4" class="desc">Entertaintment Options <br /> (@Model.Manufacture.Entertainment)</td>
-                    <td class="total">$@Model.EntertainmentPrice.ToString("N2")</td>
+                    <td class="total">$@Model.Order.EntertainmentPrice.ToString("N2")</td>
                 </tr>
                 @{
-                    var subtotal = Model.AircraftPrice + Model.SeatingPrice + Model.InteriorPrice + Model.ConnectivityPrice + Model.EntertainmentPrice;
+                    var subtotal = Model.Order.AircraftPrice + Model.Order.SeatingPrice + Model.Order.InteriorPrice + Model.Order.ConnectivityPrice + Model.Order.EntertainmentPrice;
                 }
                 <tr>
                     <td colspan="4">SUBTOTAL</td>
@@ -68,11 +68,11 @@
                 </tr>
                 <tr>
                     <td colspan="4">TAX 25%</td>
-                    <td class="total">$@Model.VAT.ToString("N2")</td>
+                    <td class="total">$@Model.Order.VAT.ToString("N2")</td>
                 </tr>
                 <tr>
                     <td colspan="4" class="grand total">GRAND TOTAL</td>
-                    <td class="total" >$@Model.FinalAmount.ToString("N2")</td>
+                    <td class="total">$@Model.Order.FinalAmount.ToString("N2")</td>
                 </tr>
             </tbody>
         </table>

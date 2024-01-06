@@ -31,20 +31,20 @@
         <br>
         <br>
         <div class="contact-form">
-            <form action="#" id="contact">
+            <form asp-action="ListView" asp-controller="Aircraft" id="contact" method="post">
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                         <div class="form-group">
                             <label>Aircraft Type:</label>
 
-                            <select>
+                            <select name="AircraftType">
                                 <option value="">All</option>
                                 <option value="Light Private Jet">Light Private Jets</option>
-                                <option value="Mid-Size Private Jets">Mid-Size Private Jets</option>
-                                <option value="Super Mid-Size Private Jets">Super Mid-Size Private Jets</option>
-                                <option value="Heavy Private Jets">Heavy Private Jets</option>
-                                <option value="Turboprop Private Jets">Turboprop Private Jets</option>
-                                <option value="VLJ Private Jets">VLJ Private Jets</option>
+                                <option value="Mid-Size Private Jet">Mid-Size Private Jets</option>
+                                <option value="Super Mid-Size Private Jet">Super Mid-Size Private Jets</option>
+                                <option value="Heavy Private Jet">Heavy Private Jets</option>
+                                <option value="Turboprop Private Jet">Turboprop Private Jets</option>
+                                <option value="VLJ Private Jet">VLJ Private Jets</option>
                             </select>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                         <div class="form-group">
                             <label>Passanger Capacity:</label>
 
-                            <select>
+                            <select name="Passengers">
                                 <option value="">--All --</option>
                                 <option value="1">1 to 5</option>
                                 <option value="2">5 to 10</option>
@@ -67,7 +67,7 @@
                         <div class="form-group">
                             <label>Range:</label>
 
-                            <select>
+                            <select name="Range">
                                 <option value="">-- All --</option>
                                 <option value="1">Below 5 hours</option>
                                 <option value="2">5 to 10 Hours</option>
@@ -80,7 +80,7 @@
                         <div class="form-group">
                             <label>Speed:</label>
 
-                            <select>
+                            <select name="Speed">
                                 <option value="">-- All --</option>
                                 <option value="1">Below 300 Knots</option>
                                 <option value="2">300 to 400 Knots</option>
@@ -94,7 +94,7 @@
 
                 <div class="col-sm-4 offset-sm-4">
                     <div class="main-button text-center">
-                        <a href="#">Search</a>
+                        <input type="submit" style="background-color:#0070E0;color:white" value="Search">
                     </div>
                 </div>
                 <br>
@@ -104,39 +104,39 @@
 
         <div class="row">
             @foreach (var item in Model)
-            {
-            <div class="col-lg-4">
-    <div class="trainer-item" style="height:440px">
-        <div class="image-thumb" style="margin-bottom:5px !important">
-            <img src="~/uploads/@item.FrontImage1" alt="" style="height:238px">
-        </div>
-        <div class="down-content">
-            <span style="font-size:18px;margin-top:5px !important">
-                $@item.Price.ToString("N2")
-            </span>
+                {
+                    <div class="col-lg-4">
+                        <div class="trainer-item" style="height:440px">
+                            <div class="image-thumb" style="margin-bottom:5px !important">
+                                <img src="~/uploads/@item.FrontImage1" alt="" style="height:238px">
+                            </div>
+                            <div class="down-content">
+                                <span style="font-size:18px;margin-top:5px !important">
+                                    $@item.Price.ToString("N2")
+                                </span>
 
-            <h4>@item.ModelName</h4>
+                                <h4>@item.ModelName</h4>
 
-            <p style="margin-bottom:5px !important">
-                <i class="fa fa-dashboard"></i> @item.Speed Knots &nbsp;&nbsp;&nbsp;
-                <i class="fa fa-cube"></i> @item.Range Hours &nbsp;&nbsp;&nbsp;
-            </p>
+                                <p style="margin-bottom:5px !important">
+                                    <i class="fa fa-dashboard"></i> @item.Speed Knots &nbsp;&nbsp;&nbsp;
+                                    <i class="fa fa-cube"></i> @item.Range Hours &nbsp;&nbsp;&nbsp;
+                                </p>
 
-            @if (@item.Quantity == 0) 
-            {
-                <div style="background-color: red; color: white; padding: 5px; text-align: center;">
-                    <strong>Sold Out</strong>
-                </div>
-            }
+                                @if (@item.Quantity == 0)
+                                {
+                                    <div style="background-color: red; color: white; padding: 5px; text-align: center;">
+                                        <strong>Sold Out</strong>
+                                    </div>
+                                }
 
             <ul class="social-icons" style="float:right;font-size:13px;">
                 <li><a asp-action="SingleDetail" asp-controller="Aircraft" asp-route-id="@item.AircraftId">+ More Details</a></li>
             </ul>
         </div>
     </div>
-</div>
-            }
-         
+                    </div>
+                }
+            
 
         </div>
 

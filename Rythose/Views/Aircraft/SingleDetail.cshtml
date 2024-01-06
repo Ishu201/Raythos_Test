@@ -9,6 +9,41 @@
     myLinkElement.classList.toggle("active");
 </script>
 
+<script>
+    function rateAircraft(aircraftId) {
+        // Toggle the 'clicked' class to change the color
+        $('#starIcon').toggleClass('clicked');
+
+        // Send a request to the controller to update the rating
+        $.ajax({
+            url: '/Aircraft/RateAircraft',
+            type: 'POST',
+            data: { aircraftId: aircraftId },
+            success: function (data) {
+                // Handle the success, if needed
+                console.log('Rating updated successfully');
+            },
+            error: function () {
+                // Handle the error, if needed
+                console.error('Failed to update rating');
+            }
+        });
+        $('#starIcon').off('click');
+    }
+</script>
+
+<style>
+    .star {
+        font-size: 24px;
+        color: black;
+        cursor: pointer;
+    }
+
+    .star.clicked {
+            color: #0073E6;
+    }
+</style>
+
 <!-- ***** Call to Action Start ***** -->
 <section class="section section-bg" id="call-to-action" style="background-image: url('/web/assets/images/back9.jpg')">
     <div class="container">
@@ -80,6 +115,7 @@
             </div>
 
             <div class="col-lg-5">
+                <span style="position:absolute;top:-5%;right:-10%;font-size:50px" class="star" id="starIcon" onclick="rateAircraft(@Model.AircraftId)">&#9733;</span>
                 <div class="row">
                     <div class="col-lg-6">
                         <label>Passenger Capacity:</label>
@@ -115,7 +151,7 @@
                     <div class="col-lg-12">
                         <br><br />
                         <center>
-                            <img src="~/uploads/@Model.SeatingImage" alt="">
+                            <img style="max-width:100%" src="~/uploads/@Model.SeatingImage" alt="">
                         </center>
 
                     </div>
@@ -133,6 +169,8 @@
                 </p>
                 <br><br>
                 <div class="main-button">
+                    @if (Context.Session.GetString("LoggedIn") == "True")
+                                {
                     @if (Model.Quantity == 0)
                     {
                         <button disabled="disabled" style="float:right;background-color:darkgrey;padding:10px">Buy This</button>
@@ -140,8 +178,12 @@
                     else
                     {
                         <a asp-action="CheckBuy" asp-controller="Aircraft" asp-route-id="@Model.AircraftId" style="float:right" class="btnblue">Buy This</a>
+                        }
                     }
-                    
+                    else
+                    {
+                        <button disabled="disabled" style="float:right;background-color:darkgrey;padding:10px">Log In to Purchase</button>
+                    }
                 </div>
             </div>
         </div>

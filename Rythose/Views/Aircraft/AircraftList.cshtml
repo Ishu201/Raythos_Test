@@ -76,11 +76,13 @@
                                                 <td>@item.Range hrs</td>
                                                 <td>@item.Speed knots</td>
                                                  <td>@item.Fuel gph</td>
-                                                 <td><b>$@item.Price.ToString("N2")</b></td>
+                                                 <td><b>$@item.Price.ToString("N2") - $@item.MaxPrice.ToString("N2")</b></td>
                                                 <td>@item.Quantity</td>
                                                 <td>
-                                                    <a asp-controller="" asp-action="" asp-route-id="@item.AircraftId"><i class="fa fa-pencil"></i></a> &nbsp;
-                                                    <a asp-controller="" asp-action="" asp-route-id="@item.AircraftId"><i class="fa fa-times"></i></a>
+                                                    <a asp-controller="Aircraft" asp-action="EditAircraft" asp-route-id="@item.AircraftId"><i class="fa fa-pencil"></i></a> &nbsp;
+                                                    <button class="btn btn-link" style="padding:0px;color:gray" onclick="confirmRemove('@Url.Action("RemoveAircraft", new { id = item.AircraftId })')">
+                                                            <i class="fa fa-times"></i>
+                                                        </button>
                                                 </td
                                             </tr>
                                             }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Raythose")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d32db29d826d535a722624d52c11b392bde853f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee2d67b234b52a5ad573c2a01ac05c216c122323")]
 [assembly: System.Reflection.AssemblyProductAttribute("Raythose")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Raythose")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

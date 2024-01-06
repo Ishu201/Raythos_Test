@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Aircraft Gallery";
+    ViewData["Title"] = "Owned Aircrafts";
     Layout = "../Shared/web_layout.cshtml";
 }
 
@@ -32,75 +32,32 @@
         <br>
 
         <div class="row">
+            @foreach (var order in Model)
+                {
             <div class="col-lg-4">
                 <div class="trainer-item" style="height:440px">
                     <div class="image-thumb">
-                        <img src="~/web/assets/images/1.jpg" alt="" style="height:238px">
+                            <img src="~/uploads/@order.Aircraft.FrontImage1" alt="" style="height:238px">
                     </div>
                     <div class="down-content">
                         <span style="font-size:18px">
-                            $3,500,000.00
+                                $@order.Aircraft.Price.ToString("N2")
                         </span>
 
-                        <h4>Cirrus Vision SF50</h4>
+                            <h4>@order.Aircraft.ModelName</h4>
 
                         <p>
-                            <i class="fa fa-dashboard"></i> 446 knots &nbsp;&nbsp;&nbsp;
-                            <i class="fa fa-cube"></i> 2,700 nautical miles &nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-dashboard"></i> @order.Aircraft.Speed knots &nbsp;&nbsp;&nbsp;
+                                <i class="fa fa-cube"></i> @order.Aircraft.Range nautical miles &nbsp;&nbsp;&nbsp;
                         </p>
 
                         <ul class="social-icons" style="float:right;font-size:13px;">
-                            <li><a asp-action="OwnedSingle" asp-controller="Customer">+ More Details</a></li>
+                                <li><a asp-action="OwnedSingle" asp-controller="Customer" asp-route-id="@order.Aircraft.AircraftId">+ More Details</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="trainer-item" style="height:440px">
-                    <div class="image-thumb">
-                        <img src="~/web/assets/images/4.jpg" alt="" style="height:238px">
-                    </div>
-                    <div class="down-content">
-                        <span style="font-size:18px">
-                            $1,170,000.00
-                        </span>
-
-                        <h4>Cessna Citation Latitude</h4>
-
-                        <p>
-                            <i class="fa fa-dashboard"></i> 446 knots &nbsp;&nbsp;&nbsp;
-                            <i class="fa fa-cube"></i> 2,700 nautical miles &nbsp;&nbsp;&nbsp;
-                        </p>
-
-                        <ul class="social-icons" style="float:right;font-size:13px;">
-                            <li><a asp-action="OwnedSingle" asp-controller="Customer">+ More Details</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="trainer-item" style="height:440px">
-                    <div class="image-thumb">
-                        <img src="~/web/assets/images/7.png" alt="" style="height:238px">
-                    </div>
-                    <div class="down-content">
-                        <span style="font-size:18px">
-                            $2,200,000.00
-                        </span>
-
-                        <h4>Bombardier Global 7500</h4>
-
-                        <p>
-                            <i class="fa fa-dashboard"></i> 446 knots &nbsp;&nbsp;&nbsp;
-                            <i class="fa fa-cube"></i> 2,700 nautical miles &nbsp;&nbsp;&nbsp;
-                        </p>
-
-                        <ul class="social-icons" style="float:right;font-size:13px;">
-                            <li><a asp-action="OwnedSingle" asp-controller="Customer">+ More Details</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+           }
 
         </div>
 

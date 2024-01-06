@@ -48,6 +48,10 @@ namespace Raythose.Models
         public int Quantity { get; set; }
 
         public string? Description { get; set; }
+        public int? Rating { get; set; }
+
+        public float MaxPrice { get; set; }
+
 
         [MaxLength(150)]
         public string? FrontImage1 { get; set; }

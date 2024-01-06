@@ -17,10 +17,6 @@ namespace Raythose.Models
         public string FullName { get; set; }
 
         [Required]
-        [DataType(DataType.Date)]
-        public DateTime DateOfBirth { get; set; }
-
-        [Required]
         [MaxLength(20)]
         public string Contact { get; set; }
 
@@ -56,7 +52,7 @@ namespace Raythose.Models
         [MaxLength(50)]
         public required string Password { get; set; }
 
-        [Required]
+
         [MaxLength(10)]
         public string? VerificationCode { get; set; }
 

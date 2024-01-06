@@ -5,6 +5,466 @@
       "PackagePath": "staticwebassets\\Raythose.bundle.scp.css"
     },
     {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\Login\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\Login\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\css\\bootstrap\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\Login\\css\\bootstrap\\bootstrap-grid.css"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\css\\bootstrap\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\Login\\css\\bootstrap\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\css\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\Login\\css\\owl.carousel.min.css"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\css\\style.css",
+      "PackagePath": "staticwebassets\\Login\\css\\style.css"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\fonts\\icomoon\\Read Me.txt",
+      "PackagePath": "staticwebassets\\Login\\fonts\\icomoon\\Read Me.txt"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\fonts\\icomoon\\demo-files\\demo.css",
+      "PackagePath": "staticwebassets\\Login\\fonts\\icomoon\\demo-files\\demo.css"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\fonts\\icomoon\\demo-files\\demo.js",
+      "PackagePath": "staticwebassets\\Login\\fonts\\icomoon\\demo-files\\demo.js"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\fonts\\icomoon\\demo.html",
+      "PackagePath": "staticwebassets\\Login\\fonts\\icomoon\\demo.html"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\fonts\\icomoon\\fonts\\icomoon.eot",
+      "PackagePath": "staticwebassets\\Login\\fonts\\icomoon\\fonts\\icomoon.eot"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\fonts\\icomoon\\fonts\\icomoon.svg",
+      "PackagePath": "staticwebassets\\Login\\fonts\\icomoon\\fonts\\icomoon.svg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\fonts\\icomoon\\fonts\\icomoon.ttf",
+      "PackagePath": "staticwebassets\\Login\\fonts\\icomoon\\fonts\\icomoon.ttf"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\fonts\\icomoon\\fonts\\icomoon.woff",
+      "PackagePath": "staticwebassets\\Login\\fonts\\icomoon\\fonts\\icomoon.woff"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\fonts\\icomoon\\selection.json",
+      "PackagePath": "staticwebassets\\Login\\fonts\\icomoon\\selection.json"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\fonts\\icomoon\\style.css",
+      "PackagePath": "staticwebassets\\Login\\fonts\\icomoon\\style.css"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\images\\bg_1.jpg",
+      "PackagePath": "staticwebassets\\Login\\images\\bg_1.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\images\\log.jpg",
+      "PackagePath": "staticwebassets\\Login\\images\\log.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\images\\reg.jpg",
+      "PackagePath": "staticwebassets\\Login\\images\\reg.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\images\\undraw_file_sync_ot38.svg",
+      "PackagePath": "staticwebassets\\Login\\images\\undraw_file_sync_ot38.svg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\Login\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\js\\jquery-3.3.1.min.js",
+      "PackagePath": "staticwebassets\\Login\\js\\jquery-3.3.1.min.js"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\js\\main.js",
+      "PackagePath": "staticwebassets\\Login\\js\\main.js"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\js\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\Login\\js\\owl.carousel.min.js"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\js\\popper.min.js",
+      "PackagePath": "staticwebassets\\Login\\js\\popper.min.js"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_alert.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_alert.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_badge.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_badge.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_breadcrumb.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_breadcrumb.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_button-group.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_button-group.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_buttons.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_buttons.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_card.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_card.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_carousel.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_carousel.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_close.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_close.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_code.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_code.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_custom-forms.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_custom-forms.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_dropdown.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_dropdown.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_forms.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_forms.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_functions.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_functions.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_grid.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_grid.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_images.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_images.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_input-group.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_input-group.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_jumbotron.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_jumbotron.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_list-group.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_list-group.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_media.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_media.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_mixins.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_mixins.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_modal.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_modal.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_nav.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_nav.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_navbar.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_navbar.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_pagination.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_pagination.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_popover.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_popover.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_print.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_print.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_progress.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_progress.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_reboot.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_reboot.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_root.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_root.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_spinners.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_spinners.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_tables.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_tables.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_toasts.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_toasts.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_tooltip.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_tooltip.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_transitions.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_transitions.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_type.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_type.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_utilities.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_utilities.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\_variables.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\_variables.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\bootstrap-grid.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\bootstrap-grid.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\bootstrap-reboot.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\bootstrap.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\bootstrap.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_alert.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_alert.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_background-variant.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_background-variant.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_badge.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_badge.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_border-radius.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_border-radius.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_box-shadow.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_box-shadow.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_breakpoints.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_breakpoints.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_buttons.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_buttons.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_caret.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_caret.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_clearfix.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_deprecate.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_deprecate.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_float.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_float.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_forms.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_forms.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_gradients.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_gradients.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_grid-framework.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_grid-framework.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_grid.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_grid.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_hover.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_hover.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_image.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_image.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_list-group.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_list-group.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_lists.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_lists.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_nav-divider.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_nav-divider.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_pagination.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_pagination.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_reset-text.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_reset-text.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_resize.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_resize.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_screen-reader.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_screen-reader.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_size.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_size.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_table-row.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_table-row.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_text-emphasis.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_text-emphasis.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_text-hide.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_text-hide.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_text-truncate.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_text-truncate.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_transition.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_transition.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\mixins\\_visibility.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\mixins\\_visibility.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_align.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_align.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_background.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_background.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_borders.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_borders.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_clearfix.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_clearfix.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_display.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_display.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_embed.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_embed.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_flex.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_flex.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_float.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_float.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_overflow.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_overflow.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_position.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_position.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_screenreaders.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_screenreaders.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_shadows.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_shadows.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_sizing.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_sizing.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_spacing.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_spacing.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_stretched-link.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_stretched-link.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_text.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_text.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\utilities\\_visibility.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\utilities\\_visibility.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\bootstrap\\vendor\\_rfs.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\bootstrap\\vendor\\_rfs.scss"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\Login\\scss\\style.scss",
+      "PackagePath": "staticwebassets\\Login\\scss\\style.scss"
+    },
+    {
       "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\admin\\Invoice\\dimension.png",
       "PackagePath": "staticwebassets\\admin\\Invoice\\dimension.png"
     },
@@ -18705,6 +19165,90 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\260-Lava-SaddleClub.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\260-Lava-SaddleClub.jpeg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\604-layout.jpg",
+      "PackagePath": "staticwebassets\\uploads\\604-layout.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\605cc.png",
+      "PackagePath": "staticwebassets\\uploads\\605cc.png"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\Bar.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\Bar.jpeg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\Bombardier-Challenger-605-Exterior_1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\Bombardier-Challenger-605-Exterior_1.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\Challenger-604-Exterior-Clouds.jpg",
+      "PackagePath": "staticwebassets\\uploads\\Challenger-604-Exterior-Clouds.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\Elegant.jpeg",
+      "PackagePath": "staticwebassets\\uploads\\Elegant.jpeg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\KA260_ExteriorC2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\KA260_ExteriorC2.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\KA360_Header.jpg",
+      "PackagePath": "staticwebassets\\uploads\\KA360_Header.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\KingAir1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\KingAir1.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\Legacy.jpg",
+      "PackagePath": "staticwebassets\\uploads\\Legacy.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\bee1.png",
+      "PackagePath": "staticwebassets\\uploads\\bee1.png"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\bee2.png",
+      "PackagePath": "staticwebassets\\uploads\\bee2.png"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\bee3.png",
+      "PackagePath": "staticwebassets\\uploads\\bee3.png"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\bee4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\bee4.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\bee5.jpg",
+      "PackagePath": "staticwebassets\\uploads\\bee5.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\bee6.jpg",
+      "PackagePath": "staticwebassets\\uploads\\bee6.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\bees.gif",
+      "PackagePath": "staticwebassets\\uploads\\bees.gif"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\c605interior.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c605interior.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\c605interior2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c605interior2.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\c605interior3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c605interior3.jpg"
+    },
+    {
       "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\citation1.jpg",
       "PackagePath": "staticwebassets\\uploads\\citation1.jpg"
     },
@@ -18731,6 +19275,86 @@
     {
       "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\citationinterior3.jpg",
       "PackagePath": "staticwebassets\\uploads\\citationinterior3.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\download (2).jpeg",
+      "PackagePath": "staticwebassets\\uploads\\download (2).jpeg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\download (3).jpeg",
+      "PackagePath": "staticwebassets\\uploads\\download (3).jpeg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\download (4).jpeg",
+      "PackagePath": "staticwebassets\\uploads\\download (4).jpeg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\download (5).jpeg",
+      "PackagePath": "staticwebassets\\uploads\\download (5).jpeg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\elegacy4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\elegacy4.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\ember1.png",
+      "PackagePath": "staticwebassets\\uploads\\ember1.png"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\ember2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ember2.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\ember3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ember3.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\ember4.png",
+      "PackagePath": "staticwebassets\\uploads\\ember4.png"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\ember5.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ember5.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\ember6.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ember6.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\embers.png",
+      "PackagePath": "staticwebassets\\uploads\\embers.png"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\kingair2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\kingair2.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\kingairinterior.jpg",
+      "PackagePath": "staticwebassets\\uploads\\kingairinterior.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\kingairlayout.jpg",
+      "PackagePath": "staticwebassets\\uploads\\kingairlayout.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\legacy-500_day.png",
+      "PackagePath": "staticwebassets\\uploads\\legacy-500_day.png"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\legacy2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\legacy2.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\legacy3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\legacy3.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\legacyinterior.jpg",
+      "PackagePath": "staticwebassets\\uploads\\legacyinterior.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\uploads\\legacyinterior2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\legacyinterior2.jpg"
     },
     {
       "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\web\\assets\\css\\bootstrap.min.css",
@@ -18971,6 +19595,10 @@
     {
       "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\web\\assets\\images\\t4.jpg",
       "PackagePath": "staticwebassets\\web\\assets\\images\\t4.jpg"
+    },
+    {
+      "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\web\\assets\\images\\user.png",
+      "PackagePath": "staticwebassets\\web\\assets\\images\\user.png"
     },
     {
       "Id": "E:\\Top Up SE\\Application Development\\Coursework 02\\Proj\\Rythose\\Rythose\\wwwroot\\web\\assets\\images\\video.mp4",

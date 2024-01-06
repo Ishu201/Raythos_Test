@@ -19,7 +19,7 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <p>Aircraft Register</p>
+                <p>User Register</p>
             </div>
         </div>
 
@@ -29,54 +29,52 @@
             <div class="col-md-12">
                 <div class="x_panel">
                     <div class="x_title">
-                        <p style='font-size:16px;font-weight:bold'>New Aircraft Registration</p>
+                        <p style='font-size:16px;font-weight:bold'>New User Registration</p>
                     </div>
 
                     <div class="x_content">
                         <br />
-                        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                        <form asp-action="Add_action" asp-controller="User" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <label class="label-align" for="model-name">
-                                        Staff Name <span class="required">*</span>
+                                    <label class="label-align" for="staff-name">
+                                        Staff Name <span class="required" style="color: red;">*</span>
                                     </label>
-                                    <input type="text" id="model-name" required="required"
-                                           class="form-control ">
+                                    <input type="text" id="staff-name" name="StaffName" required="required" class="form-control">
                                 </div>
                             </div>
 
                             <br>
+
                             <div class="row">
                                 <div class="col-lg-4">
-                                    <label class="label-align" for="model-name">
-                                        Username <span class="required">*</span>
+                                    <label class="label-align" for="username">
+                                        Username <span class="required" style="color: red;">*</span>
                                     </label>
-                                    <input type="text" id="model-name" required="required"
-                                           class="form-control ">
+                                    <input type="text" id="username" name="Username" required="required" class="form-control">
                                 </div>
+
                                 <div class="col-lg-4">
-                                    <label class="label-align" for="model-name">
-                                        Password <span class="required">*</span>
+                                    <label class="label-align" for="password">
+                                        Password <span class="required" style="color: red;">*</span>
                                     </label>
-                                    <input type="text" id="model-name" required="required"
-                                           class="form-control ">
+                                    <input type="text" id="password" name="Password" required="required" class="form-control">
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="col-lg-8"> </div>
                                 <div class="col-lg-4">
-                                    <label class="label-align" for="model-name">
-                                        Admin Password <span class="required">*</span>
+                                    <label class="label-align" for="admin-password">
+                                        Admin Password <span class="required" style="color: red;">*</span>
                                     </label>
-                                    <input type="text" id="model-name" required="required"
-                                           class="form-control ">
+                                    <input type="text" id="admin-password" name="adminPassword" required="required" class="form-control">
                                     <br>
+
                                     <div class="item form-group">
                                         <br>
-                                        <div class="col-md-12 col-sm-12 offset-md-12"
-                                             style="text-align:right">
+                                        <div class="col-md-12 col-sm-12 offset-md-12" style="text-align:right">
                                             <button class="btn btn-primary" type="reset">Reset</button>
                                             <button type="submit" class="btn btn-success">Submit</button>
                                         </div>
@@ -84,6 +82,7 @@
                                 </div>
                             </div>
                         </form>
+
                     </div>
                 </div>
 

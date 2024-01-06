@@ -70,26 +70,32 @@
                 <div class="col-12">
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
-                        <a href="index.html" class="logo">Raythos <em> Aerospac</em></a>
+                        <a href="index.html" class="logo">Raythos <em> Aerospace</em></a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
                             <li><a asp-action="Index" asp-controller="Home" id="homeTab">Home</a></li>
                             <li><a asp-action="ListView" asp-controller="Aircraft" id="aircraftTab">Aircrafts</a></li>
                             <li><a asp-action="About" asp-controller="Home" id="aboutTab">About</a></li>
-                            <li><a asp-action="Login" asp-controller="Customer">Log In</a></li>
-                            <li><a asp-action="Register" asp-controller="Customer">Sign Up</a></li>
-                            <li class="dropdown">
-                                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
-                                    aria-haspopup="true" aria-expanded="false" id="myAccount">My Account</a>
+                            @if (Context.Session.GetString("LoggedIn") == "True")
+                                {
+                                    <li class="dropdown">
+                                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                            aria-haspopup="true" aria-expanded="false" id="myAccount">My Account</a>
 
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" asp-action="CustomerProfile" asp-controller="Customer">Profile</a>
-                                    <a class="dropdown-item" asp-action="OwnAircrafts" asp-controller="Customer">Aircrafts</a>
-                                    <a class="dropdown-item" asp-action="OrderHistory" asp-controller="Customer">Order History</a>
-                                    <a class="dropdown-item" asp-action="Logout" asp-controller="Customer">Logout</a>
-                                </div>
-                            </li>
+                                        <div class="dropdown-menu">
+                                            <a class="dropdown-item" asp-action="CustomerProfile" asp-controller="Customer">Profile</a>
+                                            <a class="dropdown-item" asp-action="OwnAircrafts" asp-controller="Customer">Aircrafts</a>
+                                            <a class="dropdown-item" asp-action="OrderHistory" asp-controller="Customer">Order History</a>
+                                            <a class="dropdown-item" asp-action="Logout" asp-controller="Customer">Logout</a>
+                                        </div>
+                                    </li>
+                                }
+                                else
+                                {
+                                    <li><a asp-action="Login" asp-controller="Customer">Log In</a></li>
+                                    <li><a asp-action="Register" asp-controller="Customer" asp-route-id="0">Sign Up</a></li>
+                                }
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -114,13 +120,12 @@
             <div class="container text-center text-md-start mt-5">
                 <div class="row mt-3">
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4" style="text-align: left;">
-                        <h6 class="text-uppercase fw-bold">Company name</h6>
+                        <h6 class="text-uppercase fw-bold">Raythos <em class="text-primary">Aerospace</em></h6>
                         <hr class="mb-4 mt-0 d-inline-block mx-auto"
                             style="width: 60px; background-color: #0059b3; height: 2px" />
                         <p style="color:whitesmoke">
-                            Here you can use rows and columns to organize your footer
-                            content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                            elit.
+                            Unleashing Innovation, Soaring Beyond Limits - Your Gateway to Aerospace
+                            Advancements and Beyond..
                         </p>
                     </div>
 
@@ -130,16 +135,16 @@
                         <hr class="mb-4 mt-0 d-inline-block mx-auto"
                             style="width: 60px; background-color: #0059b3; height: 2px" />
                         <p>
-                            <a href="#!" class="text-white">MDBootstrap</a>
+                            <a asp-action="ListView" asp-controller="Aircraft" class="text-white">Private Jet for Sale</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">MDWordPress</a>
+                            <a href="#!" class="text-white">Private Jet Rental</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">BrandFlow</a>
+                            <a href="#!" class="text-white">Jet Repair</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">Bootstrap Angular</a>
+                            <a href="#!" class="text-white">After services</a>
                         </p>
                     </div>
 
@@ -149,13 +154,16 @@
                         <hr class="mb-4 mt-0 d-inline-block mx-auto"
                             style="width: 60px; background-color: #0059b3; height: 2px" />
                         <p>
-                            <a href="#!" class="text-white">Your Account</a>
+                            <a href="https://www.faa.gov/" class="text-white">Civil Avaiation Authority</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">Contact Us</a>
+                            <a href="https://www.rtx.com/" class="text-white">Raythos Airlines</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-white">Shipping Rates</a>
+                            <a href="https://icao.int/" class="text-white">ICAO - World</a>
+                        </p>
+                        <p>
+                            <a href="https://www.defense.gov/" class="text-white">Ministry of Defence</a>
                         </p>
                     </div>
 

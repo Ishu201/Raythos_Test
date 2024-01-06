@@ -32,12 +32,11 @@ namespace Raythose.Models
         public string Vendor { get; set; }
 
         [Required]
-        [MaxLength(1)]
+        [MaxLength(10)]
         public string Date { get; set; }
 
         [Required]
-        [MaxLength(20)]
-        public int Stock { get; set; } 
+        public int Stock { get; set; }
 
         [ForeignKey("MainId")]
         public MainCategory MainCategory { get; set; }
