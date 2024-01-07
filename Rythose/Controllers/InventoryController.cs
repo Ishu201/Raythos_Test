@@ -82,8 +82,8 @@ namespace Rythose.Controllers
                 SubId = subId,
                 Quantity = quantity,
                 Price = price,
-                Vendor = vendor
-                // Set other properties as needed
+                Vendor = vendor,
+                Stock = quantity
             };
 
             if (ModelState.IsValid)
@@ -109,6 +109,49 @@ namespace Rythose.Controllers
 
             return View(objItemList);
         }
+
+        public IActionResult CoreItemReg()
+        {
+            return View();
+        }
+
+        public async Task<IActionResult> CoreItemList()
+        {
+            IEnumerable<EssentialItems> objList = ctx.tbl_essential_items.ToList();
+            return View(objList);
+        }
+
+
+        [HttpPost]
+        public IActionResult CoreRegister_item(IFormCollection form)
+        {
+            // Extract values based on input names
+            string EssentialName = form["EssentialName"];
+            string EssentialDate = form["EssentialDate"];
+            string EssentialType = form["EssentialType"];
+            int EssentialQuantity = Convert.ToInt32(form["EssentialQuantity"]);
+
+            EssentialItems item = new EssentialItems
+            {
+                EssentialName = EssentialName,
+                EssentialDate = EssentialDate,
+                EssentialType = EssentialType,
+                EssentialQuantity = EssentialQuantity
+            };
+
+            if (ModelState.IsValid)
+            {
+                ctx.tbl_essential_items.Add(item);
+                ctx.SaveChanges();
+
+                HttpContext.Session.SetString("Success", "The Item is Registered Successfully");
+                return RedirectToAction("CoreItemList");
+            }
+
+            return RedirectToAction("CoreItemReg");
+        }
+
+
 
         public IActionResult CatList()
         {

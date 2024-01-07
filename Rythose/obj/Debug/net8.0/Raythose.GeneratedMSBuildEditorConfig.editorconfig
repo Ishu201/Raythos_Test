@@ -22,6 +22,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Ib21lXGluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Top Up SE/Application Development/Coursework 02/Proj/Rythose/Rythose/Views/AdminHome/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5Ib21lXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Top Up SE/Application Development/Coursework 02/Proj/Rythose/Rythose/Views/Aircraft/AddAircraft.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWlyY3JhZnRcQWRkQWlyY3JhZnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -98,6 +102,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XENhdFJlZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Top Up SE/Application Development/Coursework 02/Proj/Rythose/Rythose/Views/Inventory/CoreItemList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XENvcmVJdGVtTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Top Up SE/Application Development/Coursework 02/Proj/Rythose/Rythose/Views/Inventory/CoreItemReg.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XENvcmVJdGVtUmVnLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Top Up SE/Application Development/Coursework 02/Proj/Rythose/Rythose/Views/Inventory/ItemList.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52ZW50b3J5XEl0ZW1MaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -140,6 +152,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/Top Up SE/Application Development/Coursework 02/Proj/Rythose/Rythose/Views/Order/start_shipment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcc3RhcnRfc2hpcG1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Top Up SE/Application Development/Coursework 02/Proj/Rythose/Rythose/Views/Report/Income.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XEluY29tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Top Up SE/Application Development/Coursework 02/Proj/Rythose/Rythose/Views/Report/Order.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0XE9yZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Top Up SE/Application Development/Coursework 02/Proj/Rythose/Rythose/Views/Shared/admin_layout.cshtml]

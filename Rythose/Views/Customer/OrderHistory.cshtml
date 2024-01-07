@@ -53,6 +53,21 @@
                         @if (@order.OrderStatus == "Dispatched" || order.OrderStatus == "Departed" || order.OrderStatus == "Local")
                         {
                             <span>Order was Shipped On <b>@order.ShippedDate</b> and Expected Delivery Date is <b>@order.ExpectedDate</b></span>
+                            <br />
+                            if (order.OrderStatus == "Dispatched")
+                            {
+                                <span>The package is on its way, dispatched from the warehouse!</span>
+                            }
+                            else if (order.OrderStatus == "Departed")
+                            {
+                                <span>Your order has left the seller's country and is en route!</span>
+                            }
+                            else if (order.OrderStatus == "Local")
+                            {
+                                <span>The package has arrived in your country and is ready for delivery!</span>
+                            }
+
+
                        }
                     </p>
             </div>

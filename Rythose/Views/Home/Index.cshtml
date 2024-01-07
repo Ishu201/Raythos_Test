@@ -46,6 +46,8 @@
 
             @foreach (var item in Model)
             {
+                if (item.Quantity > 0)
+                {
                 if (num < 3 && item.Quantity > 0)
                 {
                     <div class="col-lg-4">
@@ -73,6 +75,7 @@
                     </div>
                 }
                 num++;
+                }
             }
 
             

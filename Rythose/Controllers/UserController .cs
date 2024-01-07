@@ -101,6 +101,44 @@ namespace Rythose.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public IActionResult Login_action(string username, string password)
+        {
+            // Check if the username exists in tbl_user
+            var user = ctx.tbl_user.FirstOrDefault(u => u.Username == username);
+
+            if (user != null)
+            {
+                string hashedPassword = GetMD5Hash(password);
+                var user2 = ctx.tbl_user.FirstOrDefault(u => u.Username == username && u.Password == hashedPassword);
+                
+                HttpContext.Session.SetString("AdminLoggedIn", "True");
+
+                if(username == "admin@rt")
+                {
+                    HttpContext.Session.SetString("UserType", "Admin");
+                    return RedirectToAction("Index", "AdminHome");
+                }
+                else
+                {
+                    HttpContext.Session.SetString("UserType", "Staff");
+                    return RedirectToAction("ItemList", "Inventory");
+                }
+            }
+            else
+            {
+                HttpContext.Session.SetString("Error", "Username is Invalid..!!");
+                return RedirectToAction("Login", "AdminHome");
+            }
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login", "AdminHome");
+        }
+
+
 
         // MD5 hashing function
         private string GetMD5Hash(string input)

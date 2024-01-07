@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@if (Context.Session.GetString("AdminLoggedIn") != "True")
+{
+    <script>
+        window.location.href = '@Url.Action("Login", "AdminHome")';
+    </script>
+}
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -52,7 +59,8 @@
                     </div>
 
                     <div class="clearfix"></div>
-
+                    @if (Context.Session.GetString("UserType") == "Admin")
+                    {
                     <!-- sidebar menu -->
                     <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
                         <div class="menu_section">
@@ -67,7 +75,9 @@
                                         <li id="cat_reg"><a asp-area="" asp-controller="Inventory" asp-action="CatReg">Item Category Register</a></li>
                                         <li id="cat_list"><a asp-area="" asp-controller="Inventory" asp-action="CatList">Category List</a></li>
                                         <li id="item_reg"><a asp-area="" asp-controller="Inventory" asp-action="ItemReg">Item Register</a></li>
-                                        <li id="item_list"><a asp-area="" asp-controller="Inventory" asp-action="ItemList">Item List</a></li>
+                                            <li id="item_list"><a asp-area="" asp-controller="Inventory" asp-action="ItemList">Item List</a></li>
+                                            <li id="core_item_reg"><a asp-area="" asp-controller="Inventory" asp-action="CoreItemReg">Core  Items Register</a></li>
+                                            <li id="core_item_list"><a asp-area="" asp-controller="Inventory" asp-action="CoreItemList">Core Item List</a></li>
                                     </ul>
                                 </li>
                                 <li id="aircraftManagement">
@@ -109,22 +119,45 @@
                                     </a>
                                     <ul id="userManagement_block" class="nav child_menu">
                                         <li id ="add_user"><a asp-area="" asp-controller="User" asp-action="Add">Add New User</a></li>
-                                        <li id ="list_user"><a asp-area="" asp-controller="User" asp-action="Index">Users Listt</a></li>
+                                        <li id ="list_user"><a asp-area="" asp-controller="User" asp-action="Index">Users List</a></li>
                                     </ul>
                                 </li>
                                 
-                                <li>
+                                <li id="reportManagement">
                                     <a>
                                         <i class="fa fa-bar-chart-o"></i> Reports <span class="fa fa-chevron-down"></span>
                                     </a>
-                                    <ul class="nav child_menu">
-                                        <li id ="income_rep"><a asp-area="" asp-controller="Report" asp-action="IncomeRep">Income Report</a></li>
-                                        <li id ="order_rep"><a asp-area="" asp-controller="Report" asp-action="OrderRep">Order Report</a></li>
+                                    <ul id="reportManagementBlock" class="nav child_menu">
+                                        <li id ="income_rep"><a asp-area="" asp-controller="Report" asp-action="Income">Income Report</a></li>
+                                        <li id ="order_rep"><a asp-area="" asp-controller="Report" asp-action="Order">Order Report</a></li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
                     </div>
+                    <!-- end sidebar -->
+                    }else{ 
+
+                    <!-- sidebar menu -->
+                    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                        <div class="menu_section">
+                            <ul class="nav side-menu">
+                                <li id="inventoryManagement">
+                                    <a>
+                                        <i class="fa fa-edit"></i> Inventory Management <span class="fa fa-chevron-down"></span>
+                                    </a>
+                                    <ul id="ainventoryManagement_block" class="nav child_menu">
+                                        <li id="item_reg"><a asp-area="" asp-controller="Inventory" asp-action="ItemReg">Item Register</a></li>
+                                        <li id="item_list"><a asp-area="" asp-controller="Inventory" asp-action="ItemList">Item List</a></li>
+                                            <li id="core_item_reg"><a asp-area="" asp-controller="Inventory" asp-action="CoreItemReg">Core  Items Register</a></li>
+                                            <li id="core_item_list"><a asp-area="" asp-controller="Inventory" asp-action="CoreItemList">Core Item List</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- end sidebar -->
+                    }
 
                 </div>
             </div>
@@ -140,11 +173,11 @@
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
                                    id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    Admin
+                                    @Context.Session.GetString("UserType");
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                      aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="login.html">
+                                    <a class="dropdown-item" asp-action="Logout" asp-controller="User">
                                         <i class="fa fa-sign-out pull-right"></i>
                                         Log Out
                                     </a>

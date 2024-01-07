@@ -5,6 +5,8 @@ using Raythose.Models;
 using Rythose.Models;
 using System.Diagnostics;
 using System.Globalization;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Rythose.Controllers
 {
@@ -68,6 +70,13 @@ namespace Rythose.Controllers
 
             return View();
         }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        
 
         private int ParseOrderDate(string orderDate)
         {

@@ -245,7 +245,7 @@ namespace Rythose.Controllers
 
             // Login failed
             ViewBag.ErrorMessage = "Invalid username or password";
-            return View();
+            return RedirectToAction("Login", "Customer");
         }
 
 
