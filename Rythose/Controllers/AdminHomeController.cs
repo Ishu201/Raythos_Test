@@ -35,16 +35,15 @@ namespace Rythose.Controllers
 
             // Group orders by month for the current year
             var monthlyOrderCounts = orders
-                .Where(o => !string.IsNullOrEmpty(o.OrderDate) && o.OrderDate.Length >= 10)
-                .Where(o => DateTime.Parse(o.OrderDate.Substring(0, 10)).Year == currentYear)
-                .GroupBy(o => DateTime.Parse(o.OrderDate.Substring(0, 10)).Month)
-                .OrderBy(group => group.Key)
-                .Select(group => new
-                {
-                    Month = group.Key,
-                    Count = group.Count()
-                })
-                .ToList();
+    .Where(o => !string.IsNullOrEmpty(o.OrderDate) && o.OrderDate.Length >= 10 &&
+                DateTime.TryParseExact(o.OrderDate.Substring(0, 10), "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out _)
+                && DateTime.Parse(o.OrderDate.Substring(0, 10)).Year == currentYear)
+    .GroupBy(o => DateTime.Parse(o.OrderDate.Substring(0, 10)).Month)
+    .Select(g => new { Month = g.Key, Count = g.Count() })
+    .OrderBy(x => x.Month)
+    .ToList();
+
+
 
             // Convert the data for JavaScript
             var data = new int[12]; // Initialize an array with zeros for all 12 months

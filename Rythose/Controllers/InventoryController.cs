@@ -136,7 +136,8 @@ namespace Rythose.Controllers
                 EssentialName = EssentialName,
                 EssentialDate = EssentialDate,
                 EssentialType = EssentialType,
-                EssentialQuantity = EssentialQuantity
+                EssentialQuantity = EssentialQuantity,
+                EssentialStock = EssentialQuantity
             };
 
             if (ModelState.IsValid)

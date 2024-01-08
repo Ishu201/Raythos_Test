@@ -60,5 +60,8 @@ namespace Raythose.Models
         [MaxLength(20)]
         public string Status { get; set; } = "active";
 
+        [MaxLength(200)]
+        public string? ShippingAddres { get; set; }
+
     }
 }

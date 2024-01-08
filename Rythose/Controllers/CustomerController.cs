@@ -55,9 +55,9 @@ namespace Rythose.Controllers
         }
 
         [HttpPost]
-        public IActionResult UpdateProfile(string fullName, string licenseCard,string contact,string email,string address)
+        public IActionResult UpdateProfile(string fullName, string licenseCard,string contact,string email,string address,string shippingAddres)
         {
-            string sql1 = "UPDATE tbl_customer SET FullName = @fullname,Contact = @contact,LicenseCard=@licensecard,Email=@email,Address=@address WHERE CustomerId = @CustomerId";
+            string sql1 = "UPDATE tbl_customer SET FullName = @fullname,Contact = @contact,LicenseCard=@licensecard,Email=@email,Address=@address,ShippingAddres=@shippingAddres WHERE CustomerId = @CustomerId";
             string customerIdString = HttpContext.Session.GetString("Cus");
 
             ctx.Database.ExecuteSqlRaw(sql1,
@@ -66,6 +66,7 @@ namespace Rythose.Controllers
                 new SqlParameter("@contact", contact),
                 new SqlParameter("@licensecard", licenseCard),
                 new SqlParameter("@email", email),
+                new SqlParameter("@shippingAddres", shippingAddres),
                 new SqlParameter("@address", address)
             );
 
@@ -205,7 +206,8 @@ namespace Rythose.Controllers
                             Username = model.Username,
                             Password = hashedPassword,
                             VerificationCode = verificationCode,
-                            Status = "active"
+                            Status = "active",
+                            ShippingAddres = model.Address + ", "+ model.City + ", " + model.Country
                         };
 
                         ctx.tbl_customer.Add(customer);

@@ -59,8 +59,9 @@
                                     <label class="col-form-label " style="font-size: 18px;">
                                         Shipment Details
                                     </label>
-                                    <p style="line-height: 25px;">
+                                    <p style="line-height: 25px;text-transform:capitalize">
                                         <b>Order ID -</b> @GetFormattedOrderId(Model.OrderId)<br>
+                                            <b>Shipping Address -</b> @Model.Customer.ShippingAddres<br>
                                         <b>Aircraft Price -</b> $@Model.Aircraft.Price.ToString("N2")<br>
                                         <b>Total Amount -</b> $@Model.FinalAmount.ToString("N2")<br>
                                         <b>Payment Status -</b> @Model.PaymentStatus

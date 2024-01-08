@@ -296,7 +296,6 @@ namespace Rythose.Controllers
             );
 
             ctx.SaveChanges();
-
             return RedirectToAction("manufacture_list");
         }
 

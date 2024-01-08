@@ -50,6 +50,7 @@
                                                 <th>Expected <br/> Arrival</th>
                                                 <th>Shipment Status</th>
                                                 <th>Action</th>
+                                                <th>Invoice</th>
                                             </tr>
                                         </thead>
 
@@ -64,9 +65,7 @@
                                                     <td>@orderProcess.Aircraft.ModelName</td>
                                                     <td><b>@orderProcess.Customer.FullName </b></td>
                                                         <td> @orderProcess.Customer.Contact<br>@orderProcess.Customer.ZipCode</td>
-                                                    <td>
-                                                            @orderProcess.Customer.Address, <br>@orderProcess.Customer.City<br> @orderProcess.Customer.Country
-                                                        </td>
+                                                    <td>@orderProcess.Customer.ShippingAddres</td>
                                                         <td><b>@orderProcess.ExpectedDate </b></td>
                                                 <td>
                                                         
@@ -95,6 +94,7 @@
                                                                class="btn btn-sm btn-primary">Complete</a>
                                                             }
                                                         </td>
+                                                        <td style="text-align:center"><a target='_blank' asp-route-id="@orderProcess.OrderId" asp-controller="Order" asp-action="Invoice"><i class="fa fa-eye"></i></a></td>
                                             </tr>
                                             }
                                             }
